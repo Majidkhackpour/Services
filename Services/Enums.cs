@@ -26,6 +26,30 @@ namespace Services
         [PersianNameAttribute.PersianName("انبوه ساز")] AnbouhSaz = 1,
         [PersianNameAttribute.PersianName("سایر")] Sayer = 2
     }
+
+    public enum EnBuildingSide : int
+    {
+        [PersianNameAttribute.PersianName("شمالی")] One = 0,
+        [PersianNameAttribute.PersianName("جنوبی")] Tow = 1,
+        [PersianNameAttribute.PersianName("شرقی")] Three = 2,
+        [PersianNameAttribute.PersianName("غربی")] Four = 3,
+        [PersianNameAttribute.PersianName("شمالی شرقی")] Five = 4,
+        [PersianNameAttribute.PersianName("شمالی غربی")] Six = 5,
+        [PersianNameAttribute.PersianName("جنوبی شرقی")] Seven = 6,
+        [PersianNameAttribute.PersianName("جنوبی غربی")] Eight = 7,
+        [PersianNameAttribute.PersianName("شمالی جنوبی دوکله")] Nine = 8,
+        [PersianNameAttribute.PersianName("شرقی غربی دوکله")] Ten = 9,
+        [PersianNameAttribute.PersianName("شمالی شرقی غربی")] Eleven = 10,
+        [PersianNameAttribute.PersianName("جنوبی شرقی غربی")] Towelve = 11,
+        [PersianNameAttribute.PersianName("شرقی شمالی جنوبی")] Thirteen = 12,
+        [PersianNameAttribute.PersianName("غربی شمالی جنوبی")] Fourteen = 13
+    }
+    public enum EnKhadamati : short
+    {
+        [PersianNameAttribute.PersianName("مستقل")] Mostaqel = 0,
+        [PersianNameAttribute.PersianName("مشترک")] Moshtarek = 1,
+        [PersianNameAttribute.PersianName("ندارد")] Nadarad = 2
+    }
     public enum EnPhoneBookGroup : short
     {
         [PersianNameAttribute.PersianName("[همه گروه ها]")] All = 0,
@@ -47,6 +71,12 @@ namespace Services
         Information = 1,
         Error = 2,
         Warning = 3
+    }
+    public enum EnTarakom : short
+    {
+        [PersianNameAttribute.PersianName("کم")] Low = 0,
+        [PersianNameAttribute.PersianName("متوسط")] Min = 1,
+        [PersianNameAttribute.PersianName("زیاد")] High = 2
     }
     public enum ServiceState
     {
