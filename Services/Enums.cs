@@ -80,8 +80,8 @@ namespace Services
     }
     public enum ServiceState
     {
-        Unknown = -1, // The state cannot be (has not been) retrieved.
-        NotFound = 0, // The service is not known on the host server.
+        Unknown = -1, 
+        NotFound = 0, 
         Stopped = 1,
         StartPending = 2,
         StopPending = 3,
