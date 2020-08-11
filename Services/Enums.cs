@@ -26,7 +26,17 @@ namespace Services
         [PersianNameAttribute.PersianName("انبوه ساز")] AnbouhSaz = 1,
         [PersianNameAttribute.PersianName("سایر")] Sayer = 2
     }
-
+    public enum EnMetr : int
+    {
+        [PersianNameAttribute.PersianName("متر مربع")] Metr = 0,
+        [PersianNameAttribute.PersianName("هکتار")] Hektar = 1
+    }
+    public enum EnPrice : short
+    {
+        [PersianNameAttribute.PersianName("هزارتومان")] Hezar = 0,
+        [PersianNameAttribute.PersianName("میلیون تومان")] Miliun = 1,
+        [PersianNameAttribute.PersianName("میلیارد تومان")] Miliard = 2
+    }
     public enum EnBuildingSide : int
     {
         [PersianNameAttribute.PersianName("شمالی")] One = 0,
