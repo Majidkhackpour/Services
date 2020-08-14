@@ -54,6 +54,30 @@ namespace Services
         [PersianNameAttribute.PersianName("شرقی شمالی جنوبی")] Thirteen = 12,
         [PersianNameAttribute.PersianName("غربی شمالی جنوبی")] Fourteen = 13
     }
+
+    public enum EnLogType : short
+    {
+
+    }
+
+    public enum EnSafeBox : short
+    {
+        [PersianNameAttribute.PersianName("بانک")] Bank = 0,
+        [PersianNameAttribute.PersianName("صندوق")] Sandouq = 1
+    }
+    public enum EnUserType : short
+    {
+        [PersianNameAttribute.PersianName("اپراتور")] Operator = 0,
+        [PersianNameAttribute.PersianName("ویزیتور")] Visitor = 1,
+        [PersianNameAttribute.PersianName("مدیر")] Manager = 2
+    }
+    public enum EnReceptionType : short
+    {
+        [PersianNameAttribute.PersianName("نقد")] Naqd = 0,
+        [PersianNameAttribute.PersianName("کارتخوان")] Pos = 1,
+        [PersianNameAttribute.PersianName("واریز به حساب")] Bank = 2,
+        [PersianNameAttribute.PersianName("چک دریافتنی")] Cheque = 3
+    }
     public enum EnKhadamati : short
     {
         [PersianNameAttribute.PersianName("مستقل")] Mostaqel = 0,
@@ -90,8 +114,8 @@ namespace Services
     }
     public enum ServiceState
     {
-        Unknown = -1, 
-        NotFound = 0, 
+        Unknown = -1,
+        NotFound = 0,
         Stopped = 1,
         StartPending = 2,
         StopPending = 3,
