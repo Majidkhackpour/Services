@@ -100,6 +100,12 @@ namespace Services
         [PersianNameAttribute.PersianName("زمانی که خبر زلزله کرمانشاه را شنیدید، کجا بودید؟")] Five = 4,
         [PersianNameAttribute.PersianName("قهرمان دوران کودکی شما که بود؟")] Six = 5,
     }
+
+    public enum ENSource
+    {
+        [PersianNameAttribute.PersianName("دپارتمان")] Department = 0,
+        [PersianNameAttribute.PersianName("املاک")] Building = 1
+    }
     public enum ReturnedState : short
     {
         Information = 1,
