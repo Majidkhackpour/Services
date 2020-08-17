@@ -20,10 +20,7 @@ namespace Services
         {
             get
             {
-                if (string.IsNullOrEmpty(_description))
-                {
-                    return "";
-                }
+                if (string.IsNullOrEmpty(_description)) return "";
 
                 _description.Replace("\r\n", "\n").Replace("\r", "\r\n").Replace("\n", "\r\n");
                 return _description;
@@ -65,8 +62,7 @@ namespace Services
         {
             get
             {
-                if (string.IsNullOrEmpty(_flowStackTrace))
-                    return "";
+                if (string.IsNullOrEmpty(_flowStackTrace)) return "";
                 _flowStackTrace = _flowStackTrace.Replace("\r\n", "\n").Replace("\r", "\n").Replace("\n", "\r\n");
                 _flowStackTrace = _flowStackTrace.Replace(" at ", "\r\nat ");
                 return _flowStackTrace;
@@ -92,7 +88,7 @@ namespace Services
             get
             {
                 if (ScreenShot?.Length < 1) return "";
-                FileInfo inf = new FileInfo(ScreenShot);
+                var inf = new FileInfo(ScreenShot);
                 return inf.Name;
             }
         }

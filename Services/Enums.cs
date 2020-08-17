@@ -55,6 +55,15 @@ namespace Services
         [PersianNameAttribute.PersianName("غربی شمالی جنوبی")] Fourteen = 13
     }
 
+    public enum EnRequestType : short
+    {
+        [PersianNameAttribute.PersianName("رهن و اجاره")] Rahn = 0,
+        [PersianNameAttribute.PersianName("فروش")] Forush = 1,
+        [PersianNameAttribute.PersianName("پیش فروش")] PishForush = 2,
+        [PersianNameAttribute.PersianName("معاوضه")] Moavezeh = 3,
+        [PersianNameAttribute.PersianName("مشارکت در ساخت")] Mosharekat = 4
+    }
+
     public enum EnLogType : short
     {
 
