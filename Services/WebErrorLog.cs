@@ -83,15 +83,6 @@ namespace Services
         private string _flowStackTrace = "";
         [JsonIgnore]
         public static int MinMinutsBetweenExeptions = 1;
-        public string ScreenShotFileName
-        {
-            get
-            {
-                if (ScreenShot?.Length < 1) return "";
-                var inf = new FileInfo(ScreenShot);
-                return inf.Name;
-            }
-        }
         public short MaxCountPerTime { get; set; } = 5;
         public WebErrorLog() { }
         public static void SetMinute(int minute)

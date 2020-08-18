@@ -112,8 +112,9 @@ namespace Services
 
     public enum ENSource
     {
-        [PersianNameAttribute.PersianName("دپارتمان")] Department = 0,
-        [PersianNameAttribute.PersianName("املاک")] Building = 1
+        [PersianNameAttribute.PersianName("None")] None = 0,
+        [PersianNameAttribute.PersianName("دپارتمان")] Department = 1,
+        [PersianNameAttribute.PersianName("املاک")] Building = 2
     }
     public enum ReturnedState : short
     {

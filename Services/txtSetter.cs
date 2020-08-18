@@ -7,10 +7,14 @@ namespace Services
 {
     public static class txtSetter
     {
-        public static void Focus(TextBox txt)
+        public static void Focus(TextBox txt,bool isDep=false)
         {
-            var colour = ColorTranslator.FromHtml("#50cbb0");
-            txt.BackColor = colour;
+            if (!isDep)
+            {
+                var colour = ColorTranslator.FromHtml("#50cbb0");
+                txt.BackColor = colour;
+            }
+            else txt.BackColor = Color.Silver;
             txt.ForeColor = Color.Black;
         }
         public static void Focus(Label lbl)
@@ -22,7 +26,6 @@ namespace Services
         {
             txt.BackColor = Color.White;
             txt.ForeColor = Color.Black;
-
         }
         public static void Follow(Label lbl)
         {

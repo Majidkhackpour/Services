@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Net;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
@@ -118,33 +120,32 @@ namespace Services
         {
             try
             {
-                //var lst = new List<WebErrorLog>(1) { webErrorLog };
-                //var standard = new WebErrorLogStandard()
-                //{
-                //    AndroidIme = AndroidIme,
-                //    Version = Version,
-                //    Password = Password,
-                //    Source = Source,
-                //    CpuSerial = "",
-                //    HardSerial = "",
-                //    Username = Username,
-                //    LkSerial = SystemInfo.LKSerial,
-                //    ErrorLogs = lst
-                //};
-                //var httpWebRequest =
-                //    (HttpWebRequest)WebRequest.Create("http://webservice.novinp.ir/api/ErrorLogService/");
-                ////(HttpWebRequest) WebRequest.Create("http://localhost:42100/api/ErrorLogService/");
-                //// httpWebRequest.Timeout = httpWebRequest.Timeout * (2+tryCount);
-                //httpWebRequest.ContentType = "application/json";
-                //httpWebRequest.Method = "POST";
-                //using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
-                //{
-                //    var json = JsonConvert.SerializeObject(standard);
-                //    streamWriter.Write(json);
-                //    streamWriter.Flush();
-                //    streamWriter.Close();
-                //}
-                //var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                var lst = new List<WebErrorLog>(1) { webErrorLog };
+                var standard = new WebErrorLogStandard()
+                {
+                    AndroidIme = AndroidIme,
+                    Version = Version,
+                    Password = Password,
+                    Source = Source,
+                    CpuSerial = "",
+                    HardSerial = "",
+                    Username = Username,
+                    ErrorLogs = lst
+                };
+                var httpWebRequest =
+                    (HttpWebRequest)WebRequest.Create("http://webservice.novinp.ir/api/ErrorLogService/");
+                //(HttpWebRequest) WebRequest.Create("http://localhost:42100/api/ErrorLogService/");
+                // httpWebRequest.Timeout = httpWebRequest.Timeout * (2+tryCount);
+                httpWebRequest.ContentType = "application/json";
+                httpWebRequest.Method = "POST";
+                using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+                {
+                    var json = JsonConvert.SerializeObject(standard);
+                    streamWriter.Write(json);
+                    streamWriter.Flush();
+                    streamWriter.Close();
+                }
+                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
                 return true;
             }
             catch (Exception)

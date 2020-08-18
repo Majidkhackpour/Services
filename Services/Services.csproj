@@ -72,6 +72,7 @@
     <Compile Include="SortableBindingList.cs" />
     <Compile Include="txtSetter.cs" />
     <Compile Include="WebErrorLog.cs" />
+    <Compile Include="WebErrorLogStandard.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
