@@ -128,6 +128,22 @@ namespace Services
         [PersianNameAttribute.PersianName("متوسط")] Min = 1,
         [PersianNameAttribute.PersianName("زیاد")] High = 2
     }
+
+    public enum EnNoteStatus : short
+    {
+        [PersianNameAttribute.PersianName("همه")] All = 0,
+        [PersianNameAttribute.PersianName("خوانده نشده")] Unread = 1,
+        [PersianNameAttribute.PersianName("خوانده شده")] Read = 2,
+        [PersianNameAttribute.PersianName("حذف شده")] Deleted = 3
+    }
+
+    public enum EnNotePriority : short
+    {
+        [PersianNameAttribute.PersianName("همه")] All = 0,
+        [PersianNameAttribute.PersianName("معمولی")] Mamoli = 1,
+        [PersianNameAttribute.PersianName("مهم")] Mohem = 2,
+        [PersianNameAttribute.PersianName("ضروری")] Zarori = 3
+    }
     public enum ServiceState
     {
         Unknown = -1,
