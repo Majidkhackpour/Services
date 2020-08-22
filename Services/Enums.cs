@@ -31,6 +31,12 @@ namespace Services
         [PersianNameAttribute.PersianName("متر مربع")] Metr = 0,
         [PersianNameAttribute.PersianName("هکتار")] Hektar = 1
     }
+    public enum EnBuildingStatus : short
+    {
+        [PersianNameAttribute.PersianName("موجود")] Mojod = 0,
+        [PersianNameAttribute.PersianName("واگذارشده")] Vagozar = 1,
+        [PersianNameAttribute.PersianName("[همه]")] All = -1
+    }
     public enum EnPrice : short
     {
         [PersianNameAttribute.PersianName("هزارتومان")] Hezar = 0,
