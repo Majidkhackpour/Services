@@ -60,6 +60,15 @@ namespace Services
         [PersianNameAttribute.PersianName("شرقی شمالی جنوبی")] Thirteen = 12,
         [PersianNameAttribute.PersianName("غربی شمالی جنوبی")] Fourteen = 13
     }
+    public enum EnContractBabat : short
+    {
+        [PersianNameAttribute.PersianName("اجاره")] Ejare = 0,
+        [PersianNameAttribute.PersianName("اجاره به شرط تملیک")] EjareTamlik = 1,
+        [PersianNameAttribute.PersianName("فروش")] Foroush = 2,
+        [PersianNameAttribute.PersianName("پیش فروش")] PishForoush = 3,
+        [PersianNameAttribute.PersianName("مشارکت در ساخت")] Mosharekat = 4,
+        [PersianNameAttribute.PersianName("معاوضه")] Moaveze = 5
+    }
 
     public enum EnRequestType : short
     {
@@ -79,6 +88,12 @@ namespace Services
     {
         [PersianNameAttribute.PersianName("بانک")] Bank = 0,
         [PersianNameAttribute.PersianName("صندوق")] Sandouq = 1
+    }
+    public enum EnAccountingType : short
+    {
+        [PersianNameAttribute.PersianName("اشخاص")] Peoples = 0,
+        [PersianNameAttribute.PersianName("هزینه ها")] Hazine = 1,
+        [PersianNameAttribute.PersianName("کاربران")] Users = 2
     }
     public enum EnUserType : short
     {
@@ -115,7 +130,27 @@ namespace Services
         [PersianNameAttribute.PersianName("زمانی که خبر زلزله کرمانشاه را شنیدید، کجا بودید؟")] Five = 4,
         [PersianNameAttribute.PersianName("قهرمان دوران کودکی شما که بود؟")] Six = 5,
     }
-
+    public enum EnAccountType : short
+    {
+        [PersianNameAttribute.PersianName("[همه]")] All = 0,
+        [PersianNameAttribute.PersianName("بی حساب")] BiHesab = 1,
+        [PersianNameAttribute.PersianName("بدهکار")] Bed = 2,
+        [PersianNameAttribute.PersianName("بستانکار")] Bes = 3
+    }
+    public enum EnAccountBabat : short
+    {
+        [PersianNameAttribute.PersianName("[همه]")] All = 0,
+        [PersianNameAttribute.PersianName("ثبت حساب")] Ins = 1,
+        [PersianNameAttribute.PersianName("ثبت قولنامه")] InsContract = 2,
+        [PersianNameAttribute.PersianName("ثبت سند دریافت")] Reception = 3,
+        [PersianNameAttribute.PersianName("ثبت سند پرداخت")] Payement = 4,
+        [PersianNameAttribute.PersianName("ثبت سند دستی")] Sanad = 5
+    }
+    public enum EnSanadType : short
+    {
+        [PersianNameAttribute.PersianName("سند دستی")] Dasti = 0,
+        [PersianNameAttribute.PersianName("سند اتومات")] Auto = 1
+    }
     public enum ENSource
     {
         [PersianNameAttribute.PersianName("None")] None = 0,

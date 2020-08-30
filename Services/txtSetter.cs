@@ -87,5 +87,20 @@ namespace Services
             var LAN = new CultureInfo("fa-ir");
             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(LAN);
         }
+
+        public static string ChangeNumberToDigit()
+        {
+            var ret = "";
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+            }
+
+            return ret;
+        }
     }
 }

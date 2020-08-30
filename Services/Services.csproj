@@ -63,6 +63,7 @@
     <Compile Include="IErrorHandler.cs" />
     <Compile Include="InternalLogger.cs" />
     <Compile Include="Json.cs" />
+    <Compile Include="NumberToString.cs" />
     <Compile Include="PersianNameAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertyComparer.cs" />
@@ -79,4 +80,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if $(Configuration) == Release  echo F| xcopy /Y "$(TargetPath)" "D:\Projects\References\RealState\$(TargetFileName)"</PostBuildEvent>
+  </PropertyGroup>
 </Project>
