@@ -8,6 +8,22 @@ namespace Services
         [PersianNameAttribute.PersianName("ماه")] Mounth = 2,
         [PersianNameAttribute.PersianName("روز")] Day = 3
     }
+    public enum EnLogAction : short
+    {
+        [PersianNameAttribute.PersianName("افزودن")] Insert = 0,
+        [PersianNameAttribute.PersianName("ویرایش")] Update = 1,
+        [PersianNameAttribute.PersianName("حذف")] Delete = 2,
+        [PersianNameAttribute.PersianName("فعال کردن")] Enable = 3,
+        [PersianNameAttribute.PersianName("ورود به سیستم")] Login = 4,
+        [PersianNameAttribute.PersianName("خروج از سیستم")] Logout = 5
+    }
+    public enum EnLogPart : short
+    {
+        [PersianNameAttribute.PersianName("کاربران")] Users = 0,
+        [PersianNameAttribute.PersianName("اشخاص")] Peoples = 1,
+        [PersianNameAttribute.PersianName("ورود به سیستم")] Login = 2,
+        [PersianNameAttribute.PersianName("خروج از سیستم")] Logout = 3
+    }
     public enum StatusCode
     {
         InPublishQueue = 1, //  در صف انتشار,
@@ -184,6 +200,19 @@ namespace Services
         [PersianNameAttribute.PersianName("معمولی")] Mamoli = 1,
         [PersianNameAttribute.PersianName("مهم")] Mohem = 2,
         [PersianNameAttribute.PersianName("ضروری")] Zarori = 3
+    }
+    public enum EnAppSerial : int
+    {
+        [PersianNameAttribute.PersianName("نرم افزار املاک آراد")] Building = 36,
+        [PersianNameAttribute.PersianName("زیربسته ارسال پیامک")] Sms = 97,
+        [PersianNameAttribute.PersianName("زیربسته ارتباط با دیوار")] Divar = 72,
+        [PersianNameAttribute.PersianName("زیربسته ارتباط با تلگرام")] Telegram = 44,
+        [PersianNameAttribute.PersianName("زیربسته ارتباط با واتساپ")] WhatsApp = 32,
+        [PersianNameAttribute.PersianName("زیربسته پشتیبان گیری خودکار")] AutoBackUp = 87,
+        [PersianNameAttribute.PersianName("زیربسته ارتباط با اکسل")] Excel = 25,
+        [PersianNameAttribute.PersianName("زیربسته ارتباط با وب سایت")] WebSite = 68,
+        [PersianNameAttribute.PersianName("زیربسته ارتباط با اپلیکیشن موبایل")] MobileApp = 53,
+        [PersianNameAttribute.PersianName("زیربسته راه اندازی تحت شبکه")] Network = 62
     }
     public enum ServiceState
     {
