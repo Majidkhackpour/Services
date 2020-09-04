@@ -298,4 +298,49 @@ namespace Services
         DatabaseExists = 3,
         Success = 4
     }
+    public enum MessageStatus
+    {
+        Queued = 1,
+        Schulded = 2,
+        SentToCenter = 4,
+        Delivered = 10,
+        Undelivered = 11,
+        Canceled = 13,
+        Filtered = 14,
+        Received = 50,
+        Incorrect = 100
+    }
+    public enum MessageType
+    {
+        Flash = 0,
+        MobileMemory = 1,
+        SimMemory = 2,
+        AppMemory = 3
+    }
+    public enum MetaCode
+    {
+
+        NotChecked = 99,
+        Approved = 100,
+        InvalidApiKey = 101,
+        ExpiredApiKey = 102,
+        AccountDisabled = 103,
+        NotEnoughCredit = 104,
+        ServerisBusy = 105,
+        UndefinedCommand = 106,
+        RequestFailed = 107,
+        ParametersBroken = 108,
+        InvalidRecp = 110,
+        InvalidSenderNumber = 111,
+        EmptyMessage = 112,
+        RecpIsTooLarge = 113,
+        InvalidDate = 114,
+        MsgIsTooLarge = 115,
+        RecpNotEqualWithMessage = 116
+    }
+    public enum VerifyLookupType
+    {
+        Sms = 0,
+        Call = 1,
+    }
 }
