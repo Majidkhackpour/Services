@@ -8,6 +8,25 @@ namespace Services
         [PersianNameAttribute.PersianName("ماه")] Mounth = 2,
         [PersianNameAttribute.PersianName("روز")] Day = 3
     }
+    public enum EnTelegramType
+    {
+        [PersianNameAttribute.PersianName("کانال")] Channel = 1,
+        [PersianNameAttribute.PersianName("شماره")] Number = 2,
+        [PersianNameAttribute.PersianName("گروه")] Group = 3
+    }
+    public enum EnPrintType
+    {
+        [PersianNameAttribute.PersianName("A4")] Pdf_A4 = 0,
+        [PersianNameAttribute.PersianName("A5")] Pdf_A5 = 1,
+        [PersianNameAttribute.PersianName("Excel")] Excel = 2,
+        [PersianNameAttribute.PersianName("None")] None = 3
+    }
+    public enum EnFrmPrint
+    {
+        None = 1,
+        NotShow = 2,
+        DisplayForAll = 3
+    }
     public enum EnLogAction : short
     {
         [PersianNameAttribute.PersianName("افزودن")] Insert = 0,
@@ -22,7 +41,25 @@ namespace Services
         [PersianNameAttribute.PersianName("کاربران")] Users = 0,
         [PersianNameAttribute.PersianName("اشخاص")] Peoples = 1,
         [PersianNameAttribute.PersianName("ورود به سیستم")] Login = 2,
-        [PersianNameAttribute.PersianName("خروج از سیستم")] Logout = 3
+        [PersianNameAttribute.PersianName("خروج از سیستم")] Logout = 3,
+        [PersianNameAttribute.PersianName("شهرها")] Cities = 4,
+        [PersianNameAttribute.PersianName("مناطق")] Regions = 5,
+        [PersianNameAttribute.PersianName("امکانات ملک")] BuildingOptions = 6,
+        [PersianNameAttribute.PersianName("نوع کاربری ملک")] BuildingAccountType = 7,
+        [PersianNameAttribute.PersianName("نوع کفپوش")] FloorCover = 8,
+        [PersianNameAttribute.PersianName("سرویس آشپزخانه")] KitchenService = 9,
+        [PersianNameAttribute.PersianName("انواع سند")] DocumentType = 10,
+        [PersianNameAttribute.PersianName("ارجحیت اجاره")] RentalAuthority = 11,
+        [PersianNameAttribute.PersianName("نمای ساختمان")] BuildingView = 12,
+        [PersianNameAttribute.PersianName("وضعیت بنا")] BuildingCondition = 13,
+        [PersianNameAttribute.PersianName("نوع ملک")] BuildingType = 14,
+        [PersianNameAttribute.PersianName("املاک")] Building = 15,
+        [PersianNameAttribute.PersianName("درخواست ها")] BuildingRequest = 16,
+        [PersianNameAttribute.PersianName("قولنامه ها")] Contracts = 17,
+        [PersianNameAttribute.PersianName("هزینه ها")] Hazine = 18,
+        [PersianNameAttribute.PersianName("دریافت")] Reception = 19,
+        [PersianNameAttribute.PersianName("پرداخت")] Pardakht = 20,
+        [PersianNameAttribute.PersianName("سند حسابداری")] Sanad = 21
     }
     public enum StatusCode
     {
@@ -46,6 +83,17 @@ namespace Services
     {
         [PersianNameAttribute.PersianName("متر مربع")] Metr = 0,
         [PersianNameAttribute.PersianName("هکتار")] Hektar = 1
+    }
+    public enum EnBackUpType : short
+    {
+        [PersianNameAttribute.PersianName("دستی")] Manual = 0,
+        [PersianNameAttribute.PersianName("خودکار")] Auto = 1
+    }
+    public enum EnBackUpStatus : short
+    {
+        [PersianNameAttribute.PersianName("موفق")] Success = 0,
+        [PersianNameAttribute.PersianName("درحال انجام")] Pending = 1,
+        [PersianNameAttribute.PersianName("خطا")] Error = 2
     }
     public enum EnBuildingStatus : short
     {
@@ -94,7 +142,12 @@ namespace Services
         [PersianNameAttribute.PersianName("معاوضه")] Moavezeh = 3,
         [PersianNameAttribute.PersianName("مشارکت در ساخت")] Mosharekat = 4
     }
-
+    public enum EnEconomyCodeStatus
+    {
+        [PersianNameAttribute.PersianName("نام کاربری دارم")] HasUserName = 0,
+        [PersianNameAttribute.PersianName("کد رهگیری دارم")] HasCode = 1,
+        [PersianNameAttribute.PersianName("پیش ثبت نام کد اقتصادی نکرده ام")] DontHave = 2
+    }
     public enum EnLogType : short
     {
 
@@ -185,6 +238,13 @@ namespace Services
         [PersianNameAttribute.PersianName("متوسط")] Min = 1,
         [PersianNameAttribute.PersianName("زیاد")] High = 2
     }
+    public enum AdvertiseType : short
+    {
+        [PersianNameAttribute.PersianName("دیوار")] Divar = 0,
+        [PersianNameAttribute.PersianName("شیپور")] Sheypoor = 1,
+        [PersianNameAttribute.PersianName("چت دیوار")] DivarChat = 2,
+        [PersianNameAttribute.PersianName("هردو")] Both = 3
+    }
 
     public enum EnNoteStatus : short
     {
@@ -205,14 +265,15 @@ namespace Services
     {
         [PersianNameAttribute.PersianName("نرم افزار املاک آراد")] Building = 36,
         [PersianNameAttribute.PersianName("زیربسته ارسال پیامک")] Sms = 97,
-        [PersianNameAttribute.PersianName("زیربسته ارتباط با دیوار")] Divar = 72,
+        [PersianNameAttribute.PersianName("زیربسته ارسال آگهی های تبلیغاتی")] Advertise = 72,
         [PersianNameAttribute.PersianName("زیربسته ارتباط با تلگرام")] Telegram = 44,
         [PersianNameAttribute.PersianName("زیربسته ارتباط با واتساپ")] WhatsApp = 32,
         [PersianNameAttribute.PersianName("زیربسته پشتیبان گیری خودکار")] AutoBackUp = 87,
         [PersianNameAttribute.PersianName("زیربسته ارتباط با اکسل")] Excel = 25,
         [PersianNameAttribute.PersianName("زیربسته ارتباط با وب سایت")] WebSite = 68,
         [PersianNameAttribute.PersianName("زیربسته ارتباط با اپلیکیشن موبایل")] MobileApp = 53,
-        [PersianNameAttribute.PersianName("زیربسته راه اندازی تحت شبکه")] Network = 62
+        [PersianNameAttribute.PersianName("زیربسته راه اندازی تحت شبکه")] Network = 62,
+        [PersianNameAttribute.PersianName("زیربسته حسابداری")] Accounting = 50
     }
     public enum ServiceState
     {
@@ -342,5 +403,255 @@ namespace Services
     {
         Sms = 0,
         Call = 1,
+    }
+
+    public enum AccessPart : int
+    {
+        Peoples = 10,
+        Cities = 11,
+        Regions = 12,
+        BuildingOptions = 13,
+        BuildingAccountType = 14,
+        FloorCover = 15,
+        KitchenService = 16,
+        DocumentType = 17,
+        RentalAuthotity = 18,
+        BuildingView = 19,
+        BuildingCondition = 20,
+        BuildingType = 21,
+        Building = 22,
+        BuildingSearch = 23,
+        BuildingRequest = 24,
+        Contract = 25,
+        Users = 26,
+        AccessLevel = 27,
+        Hazine = 28,
+        AccountPerformence = 29,
+        Reception = 30,
+        Pardakht = 31,
+        Sanad = 32,
+        PhoneBook = 33,
+        SmsPanels = 34,
+        SendSms = 35,
+        Simcards = 36,
+        Reports = 37
+    }
+
+    public enum State : int
+    {
+        People_Insert = 1001,
+        People_Update = 1002,
+        People_Delete = 1003,
+        People_View = 1004,
+        People_Disable = 1005,
+        People_ShowForm = 1006,
+        People_Group_Insert = 1007,
+        People_Group_Update = 1008,
+        People_Group_Delete = 1009,
+        People_Show_Tell = 1010,
+        People_Show_BankHesab = 1011,
+        People_SendSms = 1012,
+        People_Import_Excel = 1013,
+
+        Cities_Insert = 1101,
+        Cities_Update = 1102,
+        Cities_Delete = 1103,
+        Cities_View = 1104,
+        Cities_Disable = 1105,
+        Cities_ShowForm = 1106,
+
+        Regions_Insert = 1201,
+        Regions_Update = 1202,
+        Regions_Delete = 1203,
+        Regions_View = 1204,
+        Regions_Disable = 1205,
+        Regions_ShowForm = 1206,
+
+        Building_Options_Insert = 1301,
+        Building_Options_Update = 1302,
+        Building_Options_Delete = 1303,
+        Building_Options_View = 1304,
+        Building_Options_Disable = 1305,
+        Building_Options_ShowForm = 1306,
+
+        Building_Account_Type_Insert = 1401,
+        Building_Account_Type_Update = 1402,
+        Building_Account_Type_Delete = 1403,
+        Building_Account_Type_View = 1404,
+        Building_Account_Type_Disable = 1405,
+        Building_Account_Type_ShowForm = 1406,
+
+        Floor_Cover_Insert = 1501,
+        Floor_Cover_Update = 1502,
+        Floor_Cover_Delete = 1503,
+        Floor_Cover_View = 1504,
+        Floor_Cover_Disable = 1505,
+        Floor_Cover_ShowForm = 1506,
+
+        Kitchen_Service_Insert = 1601,
+        Kitchen_Service_Update = 1602,
+        Kitchen_Service_Delete = 1603,
+        Kitchen_Service_View = 1604,
+        Kitchen_Service_Disable = 1605,
+        Kitchen_Service_ShowForm = 1606,
+
+        Document_Type_Insert = 1701,
+        Document_Type_Update = 1702,
+        Document_Type_Delete = 1703,
+        Document_Type_View = 1704,
+        Document_Type_Disable = 1705,
+        Document_Type_ShowForm = 1706,
+
+        Rental_Authority_Insert = 1801,
+        Rental_Authority_Update = 1802,
+        Rental_Authority_Delete = 1803,
+        Rental_Authority_View = 1804,
+        Rental_Authority_Disable = 1805,
+        Rental_Authority_ShowForm = 1806,
+
+        Building_View_Insert = 1901,
+        Building_View_Update = 1902,
+        Building_View_Delete = 1903,
+        Building_View_View = 1904,
+        Building_View_Disable = 1905,
+        Building_View_ShowForm = 1906,
+
+        Building_Condition_Insert = 2001,
+        Building_Condition_Update = 2002,
+        Building_Condition_Delete = 2003,
+        Building_Condition_View = 2004,
+        Building_Condition_Disable = 2005,
+        Building_Condition_ShowForm = 2006,
+
+        Building_Type_Insert = 2101,
+        Building_Type_Update = 2102,
+        Building_Type_Delete = 2103,
+        Building_Type_View = 2104,
+        Building_Type_Disable = 2105,
+        Building_Type_ShowForm = 2106,
+
+        Building_Insert = 2201,
+        Building_Update = 2202,
+        Building_Delete = 2203,
+        Building_View = 2204,
+        Building_Disable = 2205,
+        Building_ShowForm = 2206,
+        Building_Mojod = 2207,
+        Building_Vagozar = 2208,
+        Building_Send_Sms = 2209,
+        Building_Send_Divar = 2210,
+        Building_Send_Sheypoor = 2211,
+        Building_Send_Telegram = 2212,
+        Building_Request_Match = 2213,
+
+        Building_Search_Site = 2302,
+        Building_Search_Sheypoor = 2303,
+        Building_Search_Divar = 2304,
+        Building_Search_System = 2305,
+        Building_Search_ShowForm = 2306,
+
+        Building_Request_Insert = 2401,
+        Building_Request_Update = 2402,
+        Building_Request_Delete = 2403,
+        Building_Request_View = 2404,
+        Building_Request_Disable = 2405,
+        Building_Request_ShowForm = 2406,
+        Building_Request_Send_Sms = 2407,
+        Building_Request_Show_Match = 2408,
+
+        Contract_Insert = 2501,
+        Contract_Update = 2502,
+        Contract_Delete = 2503,
+        Contract_View = 2504,
+        Contract_Disable = 2505,
+        Contract_ShowForm = 2506,
+        Contract_Finish = 2507,
+
+        Users_Insert = 2601,
+        Users_Update = 2602,
+        Users_Delete = 2603,
+        Users_View = 2604,
+        Users_Disable = 2605,
+        Users_ShowForm = 2606,
+        Users_Gardesh = 2607,
+
+        Users_AccessLevel_ShowForm = 2701,
+
+        Hazine_Insert = 2801,
+        Hazine_Update = 2802,
+        Hazine_Delete = 2803,
+        Hazine_View = 2804,
+        Hazine_Disable = 2805,
+        Hazine_ShowForm = 2806,
+        Hazine_Gardesh = 2807,
+
+        Account_Performence_ShowForm = 2901,
+
+        Reception_Insert = 3001,
+        Reception_Update = 3002,
+        Reception_Delete = 3003,
+        Reception_View = 3004,
+        Reception_Disable = 3005,
+        Reception_ShowForm = 3006,
+
+        Pardakht_Insert = 3101,
+        Pardakht_Update = 3102,
+        Pardakht_Delete = 3103,
+        Pardakht_View = 3104,
+        Pardakht_Disable = 3105,
+        Pardakht_ShowForm = 3106,
+
+        Sanad_Insert = 3201,
+
+        PhoneBook_Insert = 3301,
+        PhoneBook_Update = 3302,
+        PhoneBook_Delete = 3303,
+        PhoneBook_View = 3304,
+        PhoneBook_Disable = 3305,
+        PhoneBook_ShowForm = 3306,
+
+        Sms_Panels_Insert = 3401,
+        Sms_Panels_Update = 3402,
+        Sms_Panels_Delete = 3403,
+        Sms_Panels_View = 3404,
+        Sms_Panels_Disable = 3405,
+        Sms_Panels_ShowForm = 3406,
+
+        SendSms_ShowForm = 3501,
+
+        Simcards_Insert = 3601,
+        Simcards_Update = 3602,
+        Simcards_Delete = 3603,
+        Simcards_View = 3604,
+        Simcards_Disable = 3605,
+        Simcards_ShowForm = 3606,
+        Simcards_Divar_Token = 3607,
+        Simcards_Sheypoor_Token = 3608,
+        Simcards_Delete_Token = 3609,
+        Simcards_Send_Adv = 3610,
+
+        Reports_User_Performence = 3701,
+        Reports_Export_People_Excel = 3702,
+
+    }
+
+    public enum StiType : short
+    {
+        Building_One = 0,
+        Building_List = 1,
+        People_List = 2,
+        Building_Request_One = 3,
+        Building_Request_List = 4,
+        Contract_One = 5,
+        Contract_List = 6,
+        User_Performence_List = 7,
+        Account_Performence_One = 8,
+        Account_Performence_List = 9,
+        Reception_One = 10,
+        Reception_List = 11,
+        Pardakht_One = 12,
+        Pardakht_List = 13,
+        SmsSent_List = 14,
+        AdvSent_List = 15
     }
 }

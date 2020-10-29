@@ -54,6 +54,75 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Access\AccessLevel.cs" />
+    <Compile Include="Access\AccountPerformenceAccess.cs" />
+    <Compile Include="Access\BuildingAccess.cs" />
+    <Compile Include="Access\BuildingAccountTypeAccess.cs" />
+    <Compile Include="Access\BuildingConditionAccess.cs" />
+    <Compile Include="Access\BuildingOptionAccess.cs" />
+    <Compile Include="Access\BuildingRequestAccess.cs" />
+    <Compile Include="Access\BuildingSearchAccess.cs" />
+    <Compile Include="Access\BuildingTypeAccess.cs" />
+    <Compile Include="Access\BuildingViewAccess.cs" />
+    <Compile Include="Access\CityAccess.cs" />
+    <Compile Include="Access\ContractAccess.cs" />
+    <Compile Include="Access\DocumentTypeAccess.cs" />
+    <Compile Include="Access\FloorCoverAccess.cs" />
+    <Compile Include="Access\HazineAccess.cs" />
+    <Compile Include="Access\KitchenServiceAccess.cs" />
+    <Compile Include="Access\PardakhtAccess.cs" />
+    <Compile Include="Access\PeopleAccess.cs" />
+    <Compile Include="Access\PhoneBookAccess.cs" />
+    <Compile Include="Access\ReceptionAccess.cs" />
+    <Compile Include="Access\RegionAccess.cs" />
+    <Compile Include="Access\RentalAuthorityAccess.cs" />
+    <Compile Include="Access\ReportAccess.cs" />
+    <Compile Include="Access\SanadAccess.cs" />
+    <Compile Include="Access\SendSmsAccess.cs" />
+    <Compile Include="Access\SimcardAccess.cs" />
+    <Compile Include="Access\SmsPanelAccess.cs" />
+    <Compile Include="Access\UserAccess.cs" />
+    <Compile Include="Access\UserAccLevelAccess.cs" />
+    <Compile Include="Interfaces\Building\IAdvertiseLog.cs" />
+    <Compile Include="Interfaces\Building\IAdvertiseRelatedRegion.cs" />
+    <Compile Include="Interfaces\Building\IAdvTokens.cs" />
+    <Compile Include="Interfaces\Building\IBackUpLog.cs" />
+    <Compile Include="Interfaces\Building\IBuilding.cs" />
+    <Compile Include="Interfaces\Building\IBuildingAccountType.cs" />
+    <Compile Include="Interfaces\Building\IBuildingCondition.cs" />
+    <Compile Include="Interfaces\Building\IBuildingGallery.cs" />
+    <Compile Include="Interfaces\Building\IBuildingOptions.cs" />
+    <Compile Include="Interfaces\Building\IBuildingRelatedOptions.cs" />
+    <Compile Include="Interfaces\Building\IBuildingRequest.cs" />
+    <Compile Include="Interfaces\Building\IBuildingRequestRegion.cs" />
+    <Compile Include="Interfaces\Building\IBuildingType.cs" />
+    <Compile Include="Interfaces\Building\IBuildingView.cs" />
+    <Compile Include="Interfaces\Building\ICities.cs" />
+    <Compile Include="Interfaces\Building\IContract.cs" />
+    <Compile Include="Interfaces\Building\IContractFinance.cs" />
+    <Compile Include="Interfaces\Building\IDocumentType.cs" />
+    <Compile Include="Interfaces\Building\IFloorCover.cs" />
+    <Compile Include="Interfaces\Building\IGardeshHesab.cs" />
+    <Compile Include="Interfaces\Building\IHazine.cs" />
+    <Compile Include="Interfaces\Building\IKitchenService.cs" />
+    <Compile Include="Interfaces\Building\INaqz.cs" />
+    <Compile Include="Interfaces\Building\INote.cs" />
+    <Compile Include="Interfaces\Building\IPardakht.cs" />
+    <Compile Include="Interfaces\Building\IPeopleBankAccount.cs" />
+    <Compile Include="Interfaces\Building\IPeopleGroup.cs" />
+    <Compile Include="Interfaces\Building\IPeoples.cs" />
+    <Compile Include="Interfaces\Building\IPhoneBook.cs" />
+    <Compile Include="Interfaces\Building\IReception.cs" />
+    <Compile Include="Interfaces\Building\IRegions.cs" />
+    <Compile Include="Interfaces\Building\IRentalAuthority.cs" />
+    <Compile Include="Interfaces\Building\ISerializedData.cs" />
+    <Compile Include="Interfaces\Building\ISettings.cs" />
+    <Compile Include="Interfaces\Building\ISimcard.cs" />
+    <Compile Include="Interfaces\Building\ISmsLog.cs" />
+    <Compile Include="Interfaces\Building\ISmsPanels.cs" />
+    <Compile Include="Interfaces\Building\IStates.cs" />
+    <Compile Include="Interfaces\Building\IUserLog.cs" />
+    <Compile Include="Interfaces\Building\IUsers.cs" />
     <Compile Include="Calendar.cs" />
     <Compile Include="CheckPerssonValidation.cs" />
     <Compile Include="ContextMenuSetter.cs" />
@@ -62,6 +131,17 @@
     <Compile Include="ErrorHandler.cs" />
     <Compile Include="Etentions.cs" />
     <Compile Include="IErrorHandler.cs" />
+    <Compile Include="Interfaces\Department\ICustomerLog.cs" />
+    <Compile Include="Interfaces\Department\ICustomers.cs" />
+    <Compile Include="Interfaces\IHasGuid.cs" />
+    <Compile Include="Interfaces\Department\IOrder.cs" />
+    <Compile Include="Interfaces\Department\IOrderDetail.cs" />
+    <Compile Include="Interfaces\Department\IProduct.cs" />
+    <Compile Include="Interfaces\Department\IReception.cs" />
+    <Compile Include="Interfaces\Department\ISafeBox.cs" />
+    <Compile Include="Interfaces\Department\ISmsLog.cs" />
+    <Compile Include="Interfaces\Department\IUserLog.cs" />
+    <Compile Include="Interfaces\Department\IUsers.cs" />
     <Compile Include="InternalLogger.cs" />
     <Compile Include="Json.cs" />
     <Compile Include="NumberToString.cs" />
@@ -71,8 +151,10 @@
     <Compile Include="ReturnedSaveFuncInfo.cs" />
     <Compile Include="SendEmail.cs" />
     <Compile Include="SendErrorToTelegram.cs" />
+    <Compile Include="Serializable.cs" />
     <Compile Include="SortableBindingList.cs" />
     <Compile Include="txtSetter.cs" />
+    <Compile Include="Utilities.cs" />
     <Compile Include="WebErrorLog.cs" />
     <Compile Include="WebErrorLogStandard.cs" />
   </ItemGroup>
@@ -80,6 +162,7 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>if $(Configuration) == Release  echo F| xcopy /Y "$(TargetPath)" "D:\Projects\References\RealState\$(TargetFileName)"</PostBuildEvent>

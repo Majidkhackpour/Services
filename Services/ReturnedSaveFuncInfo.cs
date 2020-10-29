@@ -3,12 +3,15 @@ using System.Collections.Generic;
 
 namespace Services
 {
+    public class ReturnedSaveFuncInfoWithValue<T> : ReturnedSaveFuncInfo
+    {
+        public T value { get; set; }
+    }
     public class ReturnedSaveFuncInfo
     {
         public List<string> InformationList { get; private set; } = new List<string>();
         public List<string> ErrorList { get; private set; } = new List<string>();
         public List<string> WarningList { get; private set; } = new List<string>();
-        public string value { get; set; }
         public bool HasError => (ErrorMessage?.Length ?? 0) > 0;
         public bool HasWarning => (WarningMessage?.Length ?? 0) > 0;
 
