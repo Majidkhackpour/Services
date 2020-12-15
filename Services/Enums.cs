@@ -21,6 +21,14 @@ namespace Services
         [PersianNameAttribute.PersianName("Excel")] Excel = 2,
         [PersianNameAttribute.PersianName("None")] None = 3
     }
+    public enum EnCustomerLogType
+    {
+        [PersianNameAttribute.PersianName("تلفن")] Tell = 0,
+        [PersianNameAttribute.PersianName("پیامک")] Sms = 1,
+        [PersianNameAttribute.PersianName("دریافت")] Receptipn = 2,
+        [PersianNameAttribute.PersianName("پرداخت")] Pardakht = 3,
+        [PersianNameAttribute.PersianName("فاکتور")] Order = 4
+    }
     public enum EnFrmPrint
     {
         None = 1,
@@ -150,7 +158,13 @@ namespace Services
     }
     public enum EnLogType : short
     {
-
+        [PersianNameAttribute.PersianName("اشخاص")] Customers = 0,
+        [PersianNameAttribute.PersianName("فاکتورها")] Orders = 1,
+        [PersianNameAttribute.PersianName("پرداخت")] Pardakht = 2,
+        [PersianNameAttribute.PersianName("دریافت")] Reception = 3,
+        [PersianNameAttribute.PersianName("SafeBox ها")] SafeBox = 4,
+        [PersianNameAttribute.PersianName("پنل پیامکی")] SmsPanel = 5,
+        [PersianNameAttribute.PersianName("کاربران")] Users = 6
     }
 
     public enum EnSafeBox : short
@@ -169,13 +183,6 @@ namespace Services
         [PersianNameAttribute.PersianName("اپراتور")] Operator = 0,
         [PersianNameAttribute.PersianName("ویزیتور")] Visitor = 1,
         [PersianNameAttribute.PersianName("مدیر")] Manager = 2
-    }
-    public enum EnReceptionType : short
-    {
-        [PersianNameAttribute.PersianName("نقد")] Naqd = 0,
-        [PersianNameAttribute.PersianName("کارتخوان")] Pos = 1,
-        [PersianNameAttribute.PersianName("واریز به حساب")] Bank = 2,
-        [PersianNameAttribute.PersianName("چک دریافتنی")] Cheque = 3
     }
     public enum EnKhadamati : short
     {

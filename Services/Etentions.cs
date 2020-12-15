@@ -111,5 +111,9 @@ namespace Services
 
             return ret;
         }
+        public static string ThreeSeparator(this decimal value)
+        {
+            return value.ToString("#,0");
+        }
     }
 }

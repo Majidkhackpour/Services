@@ -23,6 +23,6 @@ namespace Servicess.Interfaces.Department
         string UserName { get; set; }
         string Password { get; set; }
         string SiteUrl { get; set; }
-
+        string HardSerial { get; set; }
     }
 }

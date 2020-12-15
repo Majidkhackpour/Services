@@ -37,12 +37,14 @@
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="persianCalender">
+      <HintPath>..\..\..\References\persianCalender.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -125,7 +127,6 @@
     <Compile Include="Interfaces\Building\IUsers.cs" />
     <Compile Include="Calendar.cs" />
     <Compile Include="CheckPerssonValidation.cs" />
-    <Compile Include="ContextMenuSetter.cs" />
     <Compile Include="CurrencyText.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="ErrorHandler.cs" />
@@ -137,7 +138,6 @@
     <Compile Include="Interfaces\Department\IOrder.cs" />
     <Compile Include="Interfaces\Department\IOrderDetail.cs" />
     <Compile Include="Interfaces\Department\IProduct.cs" />
-    <Compile Include="Interfaces\Department\IReception.cs" />
     <Compile Include="Interfaces\Department\ISafeBox.cs" />
     <Compile Include="Interfaces\Department\ISmsLog.cs" />
     <Compile Include="Interfaces\Department\IUserLog.cs" />
@@ -153,7 +153,6 @@
     <Compile Include="SendErrorToTelegram.cs" />
     <Compile Include="Serializable.cs" />
     <Compile Include="SortableBindingList.cs" />
-    <Compile Include="txtSetter.cs" />
     <Compile Include="Utilities.cs" />
     <Compile Include="WebErrorLog.cs" />
     <Compile Include="WebErrorLogStandard.cs" />

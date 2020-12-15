@@ -1,4 +1,5 @@
 ﻿using System;
+using Services;
 
 namespace Servicess.Interfaces.Department
 {
@@ -6,7 +7,9 @@ namespace Servicess.Interfaces.Department
     {
         DateTime Date { get; set; }
         Guid CustomerGuid { get; set; }
-        string SideName { get; set; }
+        EnCustomerLogType Side { get; set; }
         string Description { get; set; }
+        Guid Parent { get; set; }
+        decimal Price { get; set; }
     }
 }

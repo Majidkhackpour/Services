@@ -66,41 +66,24 @@ namespace Services
         {
             try
             {
-                var str = txt.Text;
-                str = txt.Text.Replace(".", "000");
-                str = str.Replace("+", "00");
-                txt.SelectionStart = str.Length;
-                txt.Text = str;
-            }
-            catch (Exception e)
-            {
-                WebErrorLog.ErrorInstence.StartErrorLog(e);
-            }
-        }
-        public static void Switch_Language_To_English()
-        {
-            var LAN = new CultureInfo("en-us");
-            InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(LAN);
-        }
-        public static void Switch_Language_To_Persian()
-        {
-            var LAN = new CultureInfo("fa-ir");
-            InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(LAN);
-        }
-
-        public static string ChangeNumberToDigit()
-        {
-            var ret = "";
-            try
-            {
-
+                txt.Text = txt.Text.Replace("+", "00");
+                txt.Text = txt.Text.ParseToDecimal().ThreeSeparator();
+                txt.SelectionStart = txt.Text.Length;
             }
             catch (Exception ex)
             {
                 WebErrorLog.ErrorInstence.StartErrorLog(ex);
             }
-
-            return ret;
+        }
+        public static void Switch_Language_To_English()
+        {
+            var lan = new CultureInfo("en-us");
+            InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(lan);
+        }
+        public static void Switch_Language_To_Persian()
+        {
+            var lan = new CultureInfo("fa-ir");
+            InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(lan);
         }
     }
 }

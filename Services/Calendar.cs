@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
+using TMS.Class;
 
 namespace Services
 {
@@ -491,6 +492,27 @@ namespace Services
                 WebErrorLog.ErrorInstence.StartErrorLog(ex);
                 return null;
             }
+        }
+
+        public static string GetFullCalendar()
+        {
+            var res = "";
+            try
+            {
+                var prd = new MaftooxCalendar.MaftooxPersianCalendar.DateWork();
+                var day = prd.GetNumberDayInMonth().ToString();
+                var mounth = prd.GetNameMonth();
+                var year = prd.GetNumberYear().ToString();
+                var dayname = Calendar.GetDayNameOfWeek(DateTime.Now);
+
+                res = $"امروز: {dayname} {day} {mounth} {year}";
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+            }
+
+            return res;
         }
     }
 }

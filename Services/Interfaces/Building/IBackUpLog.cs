@@ -10,6 +10,7 @@ namespace Services.Interfaces.Building
         EnBackUpType Type { get; set; }
         EnBackUpStatus BackUpStatus { get; set; }
         string StatusDesc { get; set; }
+        short Size { get; set; }
 
     }
 }
