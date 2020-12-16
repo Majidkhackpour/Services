@@ -45,6 +45,13 @@
   <ItemGroup>
     <Compile Include="clsLoadNewForm.cs" />
     <Compile Include="ContextMenuSetter.cs" />
+    <Compile Include="Pagging\FooterBindingDataReadyEventArg.cs" />
+    <Compile Include="Pagging\UC_FooterPaging.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagging\UC_FooterPaging.Designer.cs">
+      <DependentUpon>UC_FooterPaging.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="txtSetter.cs" />
     <Compile Include="CurrencyTextBox.cs">
@@ -64,6 +71,10 @@
     <EmbeddedResource Include="CurrencyTextBox.resx">
       <DependentUpon>CurrencyTextBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pagging\UC_FooterPaging.resx">
+      <DependentUpon>UC_FooterPaging.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
