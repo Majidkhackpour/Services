@@ -14,6 +14,28 @@ namespace Services
         [PersianNameAttribute.PersianName("شماره")] Number = 2,
         [PersianNameAttribute.PersianName("گروه")] Group = 3
     }
+    public enum ResponseStatus
+    {
+        [PersianNameAttribute.PersianName("موفق")]
+        Success,
+        [PersianNameAttribute.PersianName("فایل پیدا نشد")]
+        FileNotFound,
+        [PersianNameAttribute.PersianName("نام کاربری یا رمز عبور اشتباه است")]
+        InvalidUserOrPassword,
+        [PersianNameAttribute.PersianName("خطا در سرور")]
+        ErrorInServer,
+        [PersianNameAttribute.PersianName("خطا در پارامترها")]
+        ErrorInParameters,
+        [PersianNameAttribute.PersianName("خطا در کلاینت")]
+        ErrorInClient,
+        [PersianNameAttribute.PersianName("خطا در دسترسی")]
+        ErrorInAccess
+    }
+    public enum PagingPosition
+    {
+        GotoStartPage = 0,
+        GotoEndPage = 1
+    }
     public enum EnPrintType
     {
         [PersianNameAttribute.PersianName("A4")] Pdf_A4 = 0,

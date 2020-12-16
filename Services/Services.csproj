@@ -156,6 +156,8 @@
     <Compile Include="Utilities.cs" />
     <Compile Include="WebErrorLog.cs" />
     <Compile Include="WebErrorLogStandard.cs" />
+    <Compile Include="WebPageContainer.cs" />
+    <Compile Include="WebResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

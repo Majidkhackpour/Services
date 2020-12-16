@@ -55,85 +55,85 @@ namespace WindowsSerivces.Pagging
                 }
             }
         }
-        public new bool IsDisposed { get => _isDisposed || base.IsDisposed; }
+        public new bool IsDisposed => _isDisposed || base.IsDisposed;
 
         public UC_FooterPaging() => InitializeComponent();
 
         private void TxtTopCount_ValueChanged(object sender, System.EventArgs e)
         {
-            //try
-            //{
-            //    TxtTopCount.Focus();
-            //    CurrentPage = (int)TxtTopCount.Value;
-            //    _token_cus?.Cancel();
-            //    _token_cus = new CancellationTokenSource();
-            //    Task.Run(() => PaggerAsync(_token_cus.Token, list));
-            //}
-            //catch (Exception ex)
-            //{
-            //    WebErrorLog.ErrorInstence.StartErrorLog(ex);
-            //}
+            try
+            {
+                TxtTopCount.Focus();
+                CurrentPage = (int)TxtTopCount.Value;
+                _token_cus?.Cancel();
+                _token_cus = new CancellationTokenSource();
+                Task.Run(() => PaggerAsync(_token_cus.Token, list));
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+            }
         }
-        //public async Task<List<object>> PagingAsync(CancellationToken token, IEnumerable<object> objList, int countPerPage, PagingPosition position)
-        //{
-        //    try
-        //    {
-        //        while (!IsHandleCreated)
-        //        {
-        //            if (token.IsCancellationRequested || IsDisposed) return null;
-        //            await Task.Delay(100);
-        //        }
+        public async Task<List<object>> PagingAsync(CancellationToken token, IEnumerable<object> objList, int countPerPage, PagingPosition position)
+        {
+            try
+            {
+                while (!IsHandleCreated)
+                {
+                    if (token.IsCancellationRequested || IsDisposed) return null;
+                    await Task.Delay(100);
+                }
 
-        //        if (countPerPage <= 0) countPerPage = int.MaxValue;
-        //        if (IsDisposed || token.IsCancellationRequested) return null;
-        //        BeginInvoke(new Action(() =>
-        //            {
-        //                try
-        //                {
-        //                    TxtTopCount.ValueChanged -= TxtTopCount_ValueChanged;
-        //                    TxtTopCount.Maximum = int.MaxValue;
-        //                    TxtTopCount.Minimum = 1;
-        //                    TxtTopCount.Value = countPerPage;
-        //                    TxtTopCount.ValueChanged += TxtTopCount_ValueChanged;
-        //                }
-        //                catch (Exception ex) { WebErrorLog.ErrorInstence.StartErrorLog(ex); }
-        //            }));
-        //        CurrentPage = countPerPage;
-        //        list = objList?.ToList();
-        //        _ = Task.Run(() => PaggerAsync(token, objList, position));
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        WebErrorLog.ErrorInstence.StartErrorLog(ex);
-        //    }
-        //    return null;
-        //}
-        //private async Task PaggerAsync(CancellationToken token, IEnumerable<object> objList, PagingPosition? position = null)
-        //{
-        //    var ea = new FooterBindingDataReadyEventArg() { Token = token };
-        //    try
-        //    {
-        //        await Task.Delay(300);
-        //        if (token.IsCancellationRequested) return;
-        //        list = objList?.ToList();
-        //        if (token.IsCancellationRequested) return;
-        //        var proccessedPagedList = list?.ProgressPages(CurrentPage, PageIdx);
-        //        if (token.IsCancellationRequested) return;
-        //        TotalCount = proccessedPagedList.TotalPages;
-        //        if (PageIdx > TotalCount) PageIdx = TotalCount;
-        //        if (token.IsCancellationRequested) return;
-        //        await SetLabelAsync(token);
-        //        if (token.IsCancellationRequested) return;
-        //        if (position != null && position == PagingPosition.GotoEndPage)
-        //            Invoke(new Action(() => PageIdx = proccessedPagedList.TotalPages));
-        //        ea.ListData = proccessedPagedList?.Items?.Select(p => p.Item)?.ToList();
-        //        if (token.IsCancellationRequested) return;
-        //        Pagelist = ea.ListData;
-        //    }
-        //    catch (OperationCanceledException) { }
-        //    catch (Exception ex) { WebErrorLog.ErrorInstence.StartErrorLog(ex); }
-        //    finally { OnBindDataReady?.Invoke(this, ea); }
-        //}
+                if (countPerPage <= 0) countPerPage = int.MaxValue;
+                if (IsDisposed || token.IsCancellationRequested) return null;
+                BeginInvoke(new Action(() =>
+                    {
+                        try
+                        {
+                            TxtTopCount.ValueChanged -= TxtTopCount_ValueChanged;
+                            TxtTopCount.Maximum = int.MaxValue;
+                            TxtTopCount.Minimum = 1;
+                            TxtTopCount.Value = countPerPage;
+                            TxtTopCount.ValueChanged += TxtTopCount_ValueChanged;
+                        }
+                        catch (Exception ex) { WebErrorLog.ErrorInstence.StartErrorLog(ex); }
+                    }));
+                CurrentPage = countPerPage;
+                list = objList?.ToList();
+                _ = Task.Run(() => PaggerAsync(token, objList, position));
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+            }
+            return null;
+        }
+        private async Task PaggerAsync(CancellationToken token, IEnumerable<object> objList, PagingPosition? position = null)
+        {
+            var ea = new FooterBindingDataReadyEventArg() { Token = token };
+            try
+            {
+                await Task.Delay(300);
+                if (token.IsCancellationRequested) return;
+                list = objList?.ToList();
+                if (token.IsCancellationRequested) return;
+                var proccessedPagedList = list?.ProgressPages(CurrentPage, PageIdx);
+                if (token.IsCancellationRequested) return;
+                TotalCount = proccessedPagedList.TotalPages;
+                if (PageIdx > TotalCount) PageIdx = TotalCount;
+                if (token.IsCancellationRequested) return;
+                await SetLabelAsync(token);
+                if (token.IsCancellationRequested) return;
+                if (position != null && position == PagingPosition.GotoEndPage)
+                    Invoke(new Action(() => PageIdx = proccessedPagedList.TotalPages));
+                ea.ListData = proccessedPagedList?.Items?.Select(p => p.Item)?.ToList();
+                if (token.IsCancellationRequested) return;
+                Pagelist = ea.ListData;
+            }
+            catch (OperationCanceledException) { }
+            catch (Exception ex) { WebErrorLog.ErrorInstence.StartErrorLog(ex); }
+            finally { OnBindDataReady?.Invoke(this, ea); }
+        }
         public List<object> NextItemsInPage(int start, int count)
         {
             try
@@ -181,54 +181,54 @@ namespace WindowsSerivces.Pagging
         }
         private void BtnBack_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    if (PageIdx > 1)
-            //    {
-            //        PageIdx = PageIdx - 1;
-            //        _token_cus?.Cancel();
-            //        _token_cus = new CancellationTokenSource();
-            //        Task.Run(() => PaggerAsync(_token_cus.Token, list));
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    WebErrorLog.ErrorInstence.StartErrorLog(ex);
-            //}
+            try
+            {
+                if (PageIdx > 1)
+                {
+                    PageIdx = PageIdx - 1;
+                    _token_cus?.Cancel();
+                    _token_cus = new CancellationTokenSource();
+                    Task.Run(() => PaggerAsync(_token_cus.Token, list));
+                }
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+            }
         }
         private void BtnNext_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    if (PageIdx < TotalCount)
-            //    {
-            //        PageIdx = PageIdx + 1;
-            //        _token_cus?.Cancel();
-            //        _token_cus = new CancellationTokenSource();
-            //        Task.Run(() => PaggerAsync(_token_cus.Token, list));
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    WebErrorLog.ErrorInstence.StartErrorLog(ex);
-            //}
+            try
+            {
+                if (PageIdx < TotalCount)
+                {
+                    PageIdx = PageIdx + 1;
+                    _token_cus?.Cancel();
+                    _token_cus = new CancellationTokenSource();
+                    Task.Run(() => PaggerAsync(_token_cus.Token, list));
+                }
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+            }
         }
         private void txtFromPage_TextChanged(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    PageIdx = txtFromPage.Text.ParseToInt();
-            //    if (PageIdx > 0 && PageIdx <= TotalCount)
-            //    {
-            //        _token_cus?.Cancel();
-            //        _token_cus = new CancellationTokenSource();
-            //        Task.Run(() => PaggerAsync(_token_cus.Token, list));
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    WebErrorLog.ErrorInstence.StartErrorLog(ex);
-            //}
+            try
+            {
+                PageIdx = txtFromPage.Text.ParseToInt();
+                if (PageIdx > 0 && PageIdx <= TotalCount)
+                {
+                    _token_cus?.Cancel();
+                    _token_cus = new CancellationTokenSource();
+                    Task.Run(() => PaggerAsync(_token_cus.Token, list));
+                }
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+            }
         }
         protected override void Dispose(bool isDisposing)
         {
