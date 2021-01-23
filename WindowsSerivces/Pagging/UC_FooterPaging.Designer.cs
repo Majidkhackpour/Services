@@ -98,8 +98,9 @@
             // 
             // txtFromPage
             // 
+            this.txtFromPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtFromPage.Font = new System.Drawing.Font("B Yekan", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.txtFromPage.Location = new System.Drawing.Point(124, 0);
+            this.txtFromPage.Location = new System.Drawing.Point(124, 3);
             this.txtFromPage.Multiline = true;
             this.txtFromPage.Name = "txtFromPage";
             this.txtFromPage.Size = new System.Drawing.Size(48, 22);

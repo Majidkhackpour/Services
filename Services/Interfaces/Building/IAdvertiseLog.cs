@@ -24,11 +24,5 @@ namespace Servicess.Interfaces.Building
         int VisitCount { get; set; }
         AdvertiseType AdvType { get; set; }
         string State { get; set; }
-        string Tabdil { get; set; }
-        string RentalAuthority { get; set; }
-        bool Asansor { get; set; }
-        bool Parking { get; set; }
-        bool Anbari { get; set; }
-        bool Balkon { get; set; }
     }
 }

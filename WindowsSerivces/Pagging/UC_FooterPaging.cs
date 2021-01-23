@@ -128,7 +128,7 @@ namespace WindowsSerivces.Pagging
                     Invoke(new Action(() => PageIdx = proccessedPagedList.TotalPages));
                 ea.ListData = proccessedPagedList?.Items?.Select(p => p.Item)?.ToList();
                 if (token.IsCancellationRequested) return;
-                Pagelist = ea.ListData;
+                Pagelist = list;
             }
             catch (OperationCanceledException) { }
             catch (Exception ex) { WebErrorLog.ErrorInstence.StartErrorLog(ex); }
@@ -138,9 +138,14 @@ namespace WindowsSerivces.Pagging
         {
             try
             {
-                return start + count > Pagelist.Count
-                    ? Pagelist.GetRange(start, Pagelist.Count - start)
-                    : Pagelist.GetRange(start, count);
+                List<object> o;
+                if (start + count > Pagelist.Count)
+                {
+                    o = Pagelist.GetRange(start, Pagelist.Count - start);
+                    return o;
+                }
+                o = Pagelist.GetRange(start, count);
+                return o;
             }
             catch (Exception ex)
             {

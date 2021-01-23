@@ -24,5 +24,8 @@ namespace Servicess.Interfaces.Department
         string Password { get; set; }
         string SiteUrl { get; set; }
         string HardSerial { get; set; }
+        string LkSerial { get; set; }
+        bool isBlock { get; set; }
+        bool isWebServiceBlock { get; set; }
     }
 }

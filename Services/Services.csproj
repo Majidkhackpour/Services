@@ -37,10 +37,37 @@
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Nito.AsyncEx.Context, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\RealState\RealState\packages\Nito.AsyncEx.Context.5.1.0\lib\netstandard2.0\Nito.AsyncEx.Context.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Coordination, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\RealState\RealState\packages\Nito.AsyncEx.Coordination.5.1.0\lib\netstandard2.0\Nito.AsyncEx.Coordination.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Interop.WaitHandles, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\RealState\RealState\packages\Nito.AsyncEx.Interop.WaitHandles.5.1.0\lib\netstandard2.0\Nito.AsyncEx.Interop.WaitHandles.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Oop, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\RealState\RealState\packages\Nito.AsyncEx.Oop.5.1.0\lib\netstandard2.0\Nito.AsyncEx.Oop.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Tasks, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\RealState\RealState\packages\Nito.AsyncEx.Tasks.5.1.0\lib\netstandard2.0\Nito.AsyncEx.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.Cancellation, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\RealState\RealState\packages\Nito.Cancellation.1.1.0\lib\netstandard2.0\Nito.Cancellation.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.Collections.Deque, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\RealState\RealState\packages\Nito.Collections.Deque.1.1.0\lib\netstandard2.0\Nito.Collections.Deque.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.Disposables, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\RealState\RealState\packages\Nito.Disposables.2.2.0\lib\net461\Nito.Disposables.dll</HintPath>
+    </Reference>
     <Reference Include="persianCalender">
       <HintPath>..\..\..\References\persianCalender.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\RealState\RealState\packages\System.Collections.Immutable.1.4.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Drawing.Design" />
@@ -103,6 +130,7 @@
     <Compile Include="Interfaces\Building\IContract.cs" />
     <Compile Include="Interfaces\Building\IContractFinance.cs" />
     <Compile Include="Interfaces\Building\IDocumentType.cs" />
+    <Compile Include="Interfaces\Building\IFileInfo.cs" />
     <Compile Include="Interfaces\Building\IFloorCover.cs" />
     <Compile Include="Interfaces\Building\IGardeshHesab.cs" />
     <Compile Include="Interfaces\Building\IHazine.cs" />
@@ -123,6 +151,7 @@
     <Compile Include="Interfaces\Building\ISmsLog.cs" />
     <Compile Include="Interfaces\Building\ISmsPanels.cs" />
     <Compile Include="Interfaces\Building\IStates.cs" />
+    <Compile Include="Interfaces\Building\ITemp.cs" />
     <Compile Include="Interfaces\Building\IUserLog.cs" />
     <Compile Include="Interfaces\Building\IUsers.cs" />
     <Compile Include="Calendar.cs" />
@@ -132,8 +161,10 @@
     <Compile Include="ErrorHandler.cs" />
     <Compile Include="Etentions.cs" />
     <Compile Include="IErrorHandler.cs" />
+    <Compile Include="Interfaces\Department\IAndroids.cs" />
     <Compile Include="Interfaces\Department\ICustomerLog.cs" />
     <Compile Include="Interfaces\Department\ICustomers.cs" />
+    <Compile Include="Interfaces\Department\ISyncedData.cs" />
     <Compile Include="Interfaces\IHasGuid.cs" />
     <Compile Include="Interfaces\Department\IOrder.cs" />
     <Compile Include="Interfaces\Department\IOrderDetail.cs" />
@@ -142,6 +173,7 @@
     <Compile Include="Interfaces\Department\ISmsLog.cs" />
     <Compile Include="Interfaces\Department\IUserLog.cs" />
     <Compile Include="Interfaces\Department\IUsers.cs" />
+    <Compile Include="Interfaces\ITelegramBuilding.cs" />
     <Compile Include="InternalLogger.cs" />
     <Compile Include="Json.cs" />
     <Compile Include="NumberToString.cs" />
@@ -155,7 +187,6 @@
     <Compile Include="SortableBindingList.cs" />
     <Compile Include="Utilities.cs" />
     <Compile Include="WebErrorLog.cs" />
-    <Compile Include="WebErrorLogStandard.cs" />
     <Compile Include="WebPageContainer.cs" />
     <Compile Include="WebResponse.cs" />
   </ItemGroup>

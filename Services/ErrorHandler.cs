@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
@@ -16,6 +18,7 @@ namespace Services
         public static string Username;
         public static string Password;
         public static short MaxCountPerTime { get; set; }
+        public static string HardSerial { get; set; }
 
         public static long AndroidIme { get; set; }
         private static bool inited = false;
@@ -27,7 +30,7 @@ namespace Services
         private static Task _retryThread = null;
 
         public static void AddHandler(string version,
-            ENSource source, string path, string username = "accountingerrorlog",
+            ENSource source, string path,string hardSerial, string username = "accountingerrorlog",
             string password = "accountingerrorlog",
             int minutes = 10, int minSecendsBetweenExeptions = 30)
         {
@@ -37,8 +40,7 @@ namespace Services
                 WebErrorLog.MinMinutsBetweenExeptions = minSecendsBetweenExeptions / 60;
             Username = username;
             Password = password;
-            if (inited)
-                return;
+            if (inited) return;
             inited = true;
             if (string.IsNullOrEmpty(version))
                 new ArgumentNullException(nameof(version), "The version can not be null or empty");
@@ -53,12 +55,12 @@ namespace Services
             AppDomain.CurrentDomain.UnhandledException +=
                 new UnhandledExceptionEventHandler(WebErrorLog.ErrorInstence.UnhandledExceptionLog);
             Source = source;
-            TakeScreenShot = false; // screenshot;
-            //UserAccID = userACCID;
+            TakeScreenShot = false; 
             Path = path;
             Version = version;
             Username = username;
             Password = password;
+            HardSerial = hardSerial;
             if (_retryThread == null)
                 _retryThread = Task.Run(async () => { await retrySend(); });
         }
@@ -101,10 +103,7 @@ namespace Services
         {
             var fileSplited = e.ClassName.Split(@"/\".ToCharArray());
             e.ClassName = fileSplited[fileSplited.Length - 1];
-            e.CpuSerial = "";
-            e.HardSerial = "";
             e.Source = Source;
-            e.AndroidIme = "";
             e.Version = Version;
             e.Path = Path;
             await SaveWebErrorLog(e);
@@ -116,36 +115,16 @@ namespace Services
                 SaveToFile(webErrorLog, _fileSavePath);
         }
 
-        private static async Task<bool> SendToServer(WebErrorLog webErrorLog)
+        private static async Task<bool> SendToServer(WebErrorLog cls)
         {
             try
             {
-                var lst = new List<WebErrorLog>(1) { webErrorLog };
-                var standard = new WebErrorLogStandard()
+                using (var client = new HttpClient())
                 {
-                    AndroidIme = AndroidIme,
-                    Version = Version,
-                    Password = Password,
-                    Source = Source,
-                    CpuSerial = "",
-                    HardSerial = "",
-                    Username = Username,
-                    ErrorLogs = lst
-                };
-                var httpWebRequest =
-                    (HttpWebRequest)WebRequest.Create("http://webservice.novinp.ir/api/ErrorLogService/");
-                //(HttpWebRequest) WebRequest.Create("http://localhost:42100/api/ErrorLogService/");
-                // httpWebRequest.Timeout = httpWebRequest.Timeout * (2+tryCount);
-                httpWebRequest.ContentType = "application/json";
-                httpWebRequest.Method = "POST";
-                using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
-                {
-                    var json = JsonConvert.SerializeObject(standard);
-                    streamWriter.Write(json);
-                    streamWriter.Flush();
-                    streamWriter.Close();
+                    var json = Json.ToStringJson(cls);
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+                    var result = await client.PostAsync(Utilities.WebApi + "/api/ErrorHandler/SaveAsync", content);
                 }
-                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
                 return true;
             }
             catch (Exception)

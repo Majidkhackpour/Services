@@ -1,5 +1,10 @@
-﻿using System.Net.NetworkInformation;
+﻿using System;
+using System.IO;
+using System.Net;
+using System.Net.NetworkInformation;
+using System.Net.Sockets;
 using System.Threading.Tasks;
+using Nito.AsyncEx;
 
 namespace Services
 {
@@ -25,5 +30,44 @@ namespace Services
 
             return res;
         }
+        public static async Task<string> GetLocalIpAddress()
+        {
+            try
+            {
+                var request = (HttpWebRequest)WebRequest.Create("http://ifconfig.me");
+
+                request.UserAgent = "curl";
+
+                string publicIpAddress;
+
+                request.Method = "GET";
+                using (var response = request.GetResponse())
+                using (var reader = new StreamReader(response.GetResponseStream()))
+                    publicIpAddress = reader.ReadToEnd();
+
+                return publicIpAddress.Replace("\n", "");
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        public static async Task<string> GetNetworkIpAddress()
+        {
+            try
+            {
+                var host = Dns.GetHostEntry(Dns.GetHostName());
+                foreach (var ip in host.AddressList)
+                    if (ip.AddressFamily == AddressFamily.InterNetwork) return ip.ToString();
+                throw new Exception("No network adapters with an IPv4 address in the system!");
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+                return null;
+            }
+        }
+        public static string GetIp() => AsyncContext.Run(GetNetworkIpAddress);
+        public static string WebApi = "http://192.168.43.61:45455";
     }
 }

@@ -14,10 +14,6 @@
         public bool? Building_Disable { get; set; } = true;
         [PersianNameAttribute.PersianName("نمایش صفحه لیست ملک")]
         public bool? Building_ShowForm { get; set; } = true;
-        [PersianNameAttribute.PersianName("تغییر وضعیت به موجود")]
-        public bool? Building_Mojod { get; set; } = true;
-        [PersianNameAttribute.PersianName("تغییر وضعیت به واگذارشده")]
-        public bool? Building_Vagozar { get; set; } = true;
         [PersianNameAttribute.PersianName("ارسال پیامک به مالک")]
         public bool? Building_Send_Sms { get; set; } = true;
         [PersianNameAttribute.PersianName("ارسال ملک به دیوار")]

@@ -58,6 +58,8 @@ namespace Servicess.Interfaces.Building
         bool BonBast { get; set; }
         bool MamarJoda { get; set; }
         int RoomCount { get; set; }
-        EnBuildingStatus BuildingStatus { get; set; }
+        EnBuildingPriority Priority { get; set; }
+        bool IsArchive { get; set; }
+        string Image { get; set; }
     }
 }

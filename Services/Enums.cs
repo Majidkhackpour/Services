@@ -14,6 +14,31 @@ namespace Services
         [PersianNameAttribute.PersianName("شماره")] Number = 2,
         [PersianNameAttribute.PersianName("گروه")] Group = 3
     }
+    public enum EnTemp : short
+    {
+        States = 1,
+        Cities = 2,
+        Region = 3,
+        Users = 4,
+        PeopleGroups = 5,
+        Peoples = 6,
+        Hazine = 7,
+        BuildingAccountType = 8,
+        BuildingCondition = 9,
+        BuildingType = 10,
+        BuildingView = 11,
+        DocumentType = 12,
+        FloorCover = 13,
+        KitchenService = 14,
+        RentalAuthority = 15,
+        Building = 16,
+        Requests = 17,
+        Contract = 18,
+        Reception = 19,
+        Pardakht = 20,
+        GardeshHesab = 21,
+        BuildingOptions = 22
+    }
     public enum ResponseStatus
     {
         [PersianNameAttribute.PersianName("موفق")]
@@ -125,11 +150,12 @@ namespace Services
         [PersianNameAttribute.PersianName("درحال انجام")] Pending = 1,
         [PersianNameAttribute.PersianName("خطا")] Error = 2
     }
-    public enum EnBuildingStatus : short
+    public enum EnBuildingPriority : short
     {
-        [PersianNameAttribute.PersianName("موجود")] Mojod = 0,
-        [PersianNameAttribute.PersianName("واگذارشده")] Vagozar = 1,
-        [PersianNameAttribute.PersianName("[همه]")] All = -1
+        [PersianNameAttribute.PersianName("فوق العاده بالا")] SoHigh = 0,
+        [PersianNameAttribute.PersianName("بالا")] High = 1,
+        [PersianNameAttribute.PersianName("معمولی")] Medium = 2,
+        [PersianNameAttribute.PersianName("پایین")] Low = 3
     }
     public enum EnPrice : short
     {
@@ -253,7 +279,8 @@ namespace Services
     {
         [PersianNameAttribute.PersianName("None")] None = 0,
         [PersianNameAttribute.PersianName("دپارتمان")] Department = 1,
-        [PersianNameAttribute.PersianName("املاک")] Building = 2
+        [PersianNameAttribute.PersianName("املاک")] Building = 2,
+        [PersianNameAttribute.PersianName("Server")] Server = 3
     }
     public enum ReturnedState : short
     {

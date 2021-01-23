@@ -218,5 +218,28 @@ namespace Services
                 return null;
             }
         }
+        public static string UpSideFixString(this string input)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(input)) return "";
+                input = input.Replace("0", "۰");
+                input = input.Replace("1", "۱");
+                input = input.Replace("2", "۲");
+                input = input.Replace("3", "۳");
+                input = input.Replace("4", "۴");
+                input = input.Replace("5", "۵");
+                input = input.Replace("6", "۶");
+                input = input.Replace("7", "۷");
+                input = input.Replace("8", "۸");
+                input = input.Replace("9", "۹");
+                return input.Trim();
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+                return null;
+            }
+        }
     }
 }

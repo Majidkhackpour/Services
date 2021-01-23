@@ -127,39 +127,6 @@ namespace Services
         {
             return value.ToString("#,0");
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         private const int ChunckSizeKB = 100000;
         public static readonly DateTime MinValidDateTime = DateTime.Parse("1900/01/01 00:00:00");
         public static async Task<ReturnedSaveFuncInfo> FileTryReplceadeAsync(string FullFilePath, byte[] data, short tryCount = 10)
@@ -195,7 +162,6 @@ namespace Services
             }
             return ret;
         }
-
         public static string ToBase64(this string data)
         {
             try

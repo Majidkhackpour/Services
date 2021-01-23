@@ -27,5 +27,7 @@ namespace Servicess.Interfaces.Building
         decimal Delay { get; set; }
         string Description { get; set; }
         EnRequestType Type { get; set; }
+        Guid BazaryabGuid { get; set; }
+        decimal BazaryabPrice { get; set; }
     }
 }

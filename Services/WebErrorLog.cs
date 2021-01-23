@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
+using System.Data;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.IO;
 using System.Threading;
@@ -11,11 +13,11 @@ namespace Services
     public class WebErrorLog : EventArgs, IErrorHandler
     {
         public Guid Guid { get; set; }
-        public DateTime Modified { get; set; }
+        public DateTime Modified { get; set; } = DateTime.Now;
         public string AndroidIme { get; set; }
         public string ClassName { get; set; }
         public string CpuSerial { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime Date { get; set; } = DateTime.Now;
         public string Description
         {
             get
@@ -150,7 +152,6 @@ namespace Services
                 InternalLogger.logException(ex2);
             }
         }
-
         public void UnhandledExceptionLog(object sender, UnhandledExceptionEventArgs ex)
         {
             try
@@ -262,7 +263,7 @@ namespace Services
                 }
                 catch
                 {
-                    errorLog.ExceptionType = "exceptio On get Type:" + ex.Message;
+                    errorLog.ExceptionType = "exception On get Type:" + ex.Message;
                 }
 
                 while (ex.InnerException != null)
@@ -271,6 +272,7 @@ namespace Services
                     ex = ex.InnerException;
                 }
 
+                errorLog.Ip = Utilities.GetIp() ?? "";
                 Task.Run(() => ErrorHandler.OnExceptionHandle(errorLog));
             }
             catch (OperationCanceledException)
@@ -281,10 +283,7 @@ namespace Services
                 InternalLogger.logException(ex2);
             }
         }
-        public override string ToString()
-        {
-            return Json.ToStringJson(this);
-        }
 
+        public override string ToString() => Json.ToStringJson(this);
     }
 }
