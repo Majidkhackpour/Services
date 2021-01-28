@@ -195,11 +195,6 @@ namespace Services
             }
             return returnedSaveFuncInfo;
         }
-        public void ThrowExceptionIfError()
-        {
-            if (HasError)
-                throw new Exception(ErrorMessage);
-        }
         public void AddError(string message) => AddReturnedValue(ReturnedState.Error, message);
         public void AddInformation(string message) => AddReturnedValue(ReturnedState.Information, message);
         public void AddWarning(string message) => AddReturnedValue(ReturnedState.Warning, message);
