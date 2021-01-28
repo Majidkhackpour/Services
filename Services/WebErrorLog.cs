@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Concurrent;
-using System.Data;
-using System.Data.SqlClient;
 using System.Diagnostics;
 using System.IO;
 using System.Threading;
@@ -273,6 +271,7 @@ namespace Services
                 }
 
                 errorLog.Ip = Utilities.GetIp() ?? "";
+                Logger.LoggerInstance.SaveLog(errorLog.ToString(), EnGroup.Exception);
                 Task.Run(() => ErrorHandler.OnExceptionHandle(errorLog));
             }
             catch (OperationCanceledException)

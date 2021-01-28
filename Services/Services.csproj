@@ -160,7 +160,7 @@
     <Compile Include="Enums.cs" />
     <Compile Include="ErrorHandler.cs" />
     <Compile Include="Etentions.cs" />
-    <Compile Include="IErrorHandler.cs" />
+    <Compile Include="Interfaces\IErrorHandler.cs" />
     <Compile Include="Interfaces\Department\IAndroids.cs" />
     <Compile Include="Interfaces\Department\ICustomerLog.cs" />
     <Compile Include="Interfaces\Department\ICustomers.cs" />
@@ -173,9 +173,11 @@
     <Compile Include="Interfaces\Department\ISmsLog.cs" />
     <Compile Include="Interfaces\Department\IUserLog.cs" />
     <Compile Include="Interfaces\Department\IUsers.cs" />
+    <Compile Include="Interfaces\ILogger.cs" />
     <Compile Include="Interfaces\ITelegramBuilding.cs" />
     <Compile Include="InternalLogger.cs" />
     <Compile Include="Json.cs" />
+    <Compile Include="Logger.cs" />
     <Compile Include="NumberToString.cs" />
     <Compile Include="PersianNameAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

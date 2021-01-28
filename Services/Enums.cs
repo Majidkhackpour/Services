@@ -14,6 +14,12 @@ namespace Services
         [PersianNameAttribute.PersianName("شماره")] Number = 2,
         [PersianNameAttribute.PersianName("گروه")] Group = 3
     }
+    public enum EnGroup : short
+    {
+        [PersianNameAttribute.PersianName("None")] None = 1,
+        [PersianNameAttribute.PersianName("Connection")] Connection = 0,
+        [PersianNameAttribute.PersianName("Exception")] Exception = 2
+    }
     public enum EnTemp : short
     {
         States = 1,

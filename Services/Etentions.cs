@@ -87,7 +87,7 @@ namespace Services
         }
         public static int ParseToInt(this string value, int def = 0)
         {
-            string xstr = value.Trim();
+            string xstr = value?.Trim();
             if (xstr == "")
                 return def;
             return int.TryParse(value, out var ret) ? ret : def;

@@ -101,12 +101,19 @@ namespace Services
         }
         public static async Task OnExceptionHandle(WebErrorLog e)
         {
-            var fileSplited = e.ClassName.Split(@"/\".ToCharArray());
-            e.ClassName = fileSplited[fileSplited.Length - 1];
-            e.Source = Source;
-            e.Version = Version;
-            e.Path = Path;
-            await SaveWebErrorLog(e);
+            try
+            {
+                var fileSplited = e.ClassName.Split(@"/\".ToCharArray());
+                e.ClassName = fileSplited[fileSplited.Length - 1];
+                e.Source = Source;
+                e.Version = Version;
+                e.Path = Path;
+                await SaveWebErrorLog(e);
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+            }
         }
 
         private static async Task SaveWebErrorLog(WebErrorLog webErrorLog)
