@@ -105,13 +105,16 @@
     <Compile Include="Access\ReceptionAccess.cs" />
     <Compile Include="Access\RegionAccess.cs" />
     <Compile Include="Access\RentalAuthorityAccess.cs" />
-    <Compile Include="Access\ReportAccess.cs" />
     <Compile Include="Access\SanadAccess.cs" />
     <Compile Include="Access\SendSmsAccess.cs" />
     <Compile Include="Access\SimcardAccess.cs" />
     <Compile Include="Access\SmsPanelAccess.cs" />
     <Compile Include="Access\UserAccess.cs" />
     <Compile Include="Access\UserAccLevelAccess.cs" />
+    <Compile Include="DefaultCoding\HesabGroupDefualts.cs" />
+    <Compile Include="DefaultCoding\KolCodingsDefaults.cs" />
+    <Compile Include="DefaultCoding\MoeinCodingsDefaults.cs" />
+    <Compile Include="DefaultCoding\ParentDefaults.cs" />
     <Compile Include="Interfaces\Building\IAdvertiseLog.cs" />
     <Compile Include="Interfaces\Building\IAdvertiseRelatedRegion.cs" />
     <Compile Include="Interfaces\Building\IAdvTokens.cs" />
@@ -134,7 +137,10 @@
     <Compile Include="Interfaces\Building\IFloorCover.cs" />
     <Compile Include="Interfaces\Building\IGardeshHesab.cs" />
     <Compile Include="Interfaces\Building\IHazine.cs" />
+    <Compile Include="Interfaces\Building\IHesabGroup.cs" />
     <Compile Include="Interfaces\Building\IKitchenService.cs" />
+    <Compile Include="Interfaces\Building\IKol.cs" />
+    <Compile Include="Interfaces\Building\IMoein.cs" />
     <Compile Include="Interfaces\Building\INaqz.cs" />
     <Compile Include="Interfaces\Building\INote.cs" />
     <Compile Include="Interfaces\Building\IPardakht.cs" />
@@ -151,6 +157,7 @@
     <Compile Include="Interfaces\Building\ISmsLog.cs" />
     <Compile Include="Interfaces\Building\ISmsPanels.cs" />
     <Compile Include="Interfaces\Building\IStates.cs" />
+    <Compile Include="Interfaces\Building\ITafsil.cs" />
     <Compile Include="Interfaces\Building\ITemp.cs" />
     <Compile Include="Interfaces\Building\IUserLog.cs" />
     <Compile Include="Interfaces\Building\IUsers.cs" />

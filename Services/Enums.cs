@@ -14,6 +14,16 @@ namespace Services
         [PersianNameAttribute.PersianName("شماره")] Number = 2,
         [PersianNameAttribute.PersianName("گروه")] Group = 3
     }
+    public enum HesabType
+    {
+        [PersianNameAttribute.PersianName("همه")] All = 1,
+        [PersianNameAttribute.PersianName("مشتریان")] Customer = 2,
+        [PersianNameAttribute.PersianName("هزینه ها")] Hazine = 3,
+        [PersianNameAttribute.PersianName("بانک ها")] Bank = 1,
+        [PersianNameAttribute.PersianName("صندوق ها")] Sandouq = 2,
+        [PersianNameAttribute.PersianName("کاربران")] Users = 3,
+        [PersianNameAttribute.PersianName("حساب تفصیلی")] Tafsil = 3
+    }
     public enum EnGroup : short
     {
         [PersianNameAttribute.PersianName("None")] None = 1,
@@ -714,6 +724,7 @@ namespace Services
         Pardakht_One = 12,
         Pardakht_List = 13,
         SmsSent_List = 14,
-        AdvSent_List = 15
+        AdvSent_List = 15,
+        Sood_Zian = 16
     }
 }

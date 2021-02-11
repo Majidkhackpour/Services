@@ -56,7 +56,5 @@
         public SendSmsAccess SendSms { get; set; } = new SendSmsAccess();
         [PersianNameAttribute.PersianName("سیمکارت ها")]
         public SimcardAccess Simcard { get; set; } = new SimcardAccess();
-        [PersianNameAttribute.PersianName("گزارشات")]
-        public ReportAccess Report { get; set; } = new ReportAccess();
     }
 }
