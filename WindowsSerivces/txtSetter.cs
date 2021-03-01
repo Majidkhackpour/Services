@@ -66,8 +66,12 @@ namespace Services
         {
             try
             {
-                txt.Text = txt.Text.Replace("+", "00");
-                txt.Text = txt.Text.ParseToDecimal().ThreeSeparator();
+                var a = txt.Text;
+                a = a.Replace("+", "00");
+                if(a.Contains("."))
+                    a = a.Replace(".", "");
+                a = a.ParseToDecimal().ThreeSeparator();
+                txt.Text = a;
                 txt.SelectionStart = txt.Text.Length;
             }
             catch (Exception ex)

@@ -3,14 +3,13 @@ using Servicess.Interfaces;
 
 namespace Services.Interfaces.Building
 {
-    public interface IReception : IHasGuid
+    public interface ISanad : IHasGuid
     {
-        long Number { get; set; }
         DateTime DateM { get; set; }
         string Description { get; set; }
-        Guid TafsilGuid { get; set; }
-        Guid MoeinGuid { get; set; }
+        long Number { get; set; }
+        EnSanadStatus SanadStatus { get; set; }
         Guid UserGuid { get; set; }
-        long SanadNumber { get; set; }
+        EnSanadType SanadType { get; set; }
     }
 }

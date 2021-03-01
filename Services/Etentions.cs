@@ -918,5 +918,19 @@ namespace Services
                 return value;
             }
         }
+        public static string AccountDiagnosis(this decimal value)
+        {
+            try
+            {
+                if (value < 0) return "بدهکار";
+                if (value > 0) return "بستانکار";
+                return "بی حساب";
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+                return "";
+            }
+        }
     }
 }

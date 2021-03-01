@@ -245,5 +245,6 @@ namespace Services.DefaultCoding
         public Guid CLSMoein90101 => Guid.Parse("cec3cbb7-45fc-4fac-b73c-7a75bbcbd54d");
         public Guid CLSMoein90102 => Guid.Parse("1f5abff9-a2c2-496c-b9af-0908f8741031");
         public Guid CLSMoein90201 => Guid.Parse("b5cd89cc-b92a-4aad-8cb1-738805acb3a5");
+        public Guid CLSMoein90202 => Guid.Parse("611bf7d8-0a94-4382-a954-aaf2f561bd8f");
     }
 }

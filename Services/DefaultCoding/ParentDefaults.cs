@@ -2,8 +2,8 @@
 {
     public class ParentDefaults
     {
-        public static HesabGroupDefualts HesabGroupGuids { get; } = new HesabGroupDefualts();
         public static KolCodingsDefaults KolCoding { get; } = new KolCodingsDefaults();
         public static MoeinCodingsDefaults MoeinCoding { get; } = new MoeinCodingsDefaults();
+        public static TafsilCodingDefaults TafsilCoding { get; } = new TafsilCodingDefaults();
     }
 }

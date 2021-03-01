@@ -14,15 +14,52 @@ namespace Services
         [PersianNameAttribute.PersianName("شماره")] Number = 2,
         [PersianNameAttribute.PersianName("گروه")] Group = 3
     }
+    public enum EnSanadStatus : short
+    {
+        [PersianNameAttribute.PersianName("دائمی")] Permament = 0,
+        [PersianNameAttribute.PersianName("موقت")] Temporary = 1
+    }
+    public enum EnHesabGroup
+    {
+        [PersianNameAttribute.PersianName("دارایی های جاری")] CurrentAssets = 1,
+        [PersianNameAttribute.PersianName("دارایی های غیرجاری")] NonCurrentAssets = 2,
+        [PersianNameAttribute.PersianName("بدهی های جاری")] CurrentDebits = 3,
+        [PersianNameAttribute.PersianName("بدهی های غیرجاری")] NonCurrentDebits = 4,
+        [PersianNameAttribute.PersianName("حقوق صاحبان سهام")] HoghooghSahebaneSaham = 5,
+        [PersianNameAttribute.PersianName("درآمدها")] Income = 6,
+        [PersianNameAttribute.PersianName("بهای تمام شده کالا")] BahayeTamamShode = 7,
+        [PersianNameAttribute.PersianName("هزینه ها")] Hazine = 8,
+        [PersianNameAttribute.PersianName("سایر حساب ها")] OtherHesabs = 9
+    }
+    public enum EnCheckSh
+    {
+        [PersianNameAttribute.PersianName("همه")] All = 0,
+        [PersianNameAttribute.PersianName("موجود")] Mojoud = 1,
+        [PersianNameAttribute.PersianName("پاس شده")] Pass = 2,
+        [PersianNameAttribute.PersianName("برگشتی")] Bargashti = 3,
+        [PersianNameAttribute.PersianName("عودت شده")] OudatShode = 4,
+        [PersianNameAttribute.PersianName("ابطال شده")] BatelShode = 5,
+        [PersianNameAttribute.PersianName("امانت داده شده")] Amanati = 6
+    }
+    public enum EnCheckM
+    {
+        [PersianNameAttribute.PersianName("همه")] All = 0,
+        [PersianNameAttribute.PersianName("موجود")] Mojoud = 1,
+        [PersianNameAttribute.PersianName("خرج شده")] Kharj = 2,
+        [PersianNameAttribute.PersianName("برگشتی")] Bargashti = 3,
+        [PersianNameAttribute.PersianName("واگذار شده")] Vagozar = 4,
+        [PersianNameAttribute.PersianName("نقد شده")] Naqd = 5,
+        [PersianNameAttribute.PersianName("باطل شده")] Batel = 6,
+        [PersianNameAttribute.PersianName("وصول شده")] Vosool = 7
+    }
     public enum HesabType
     {
         [PersianNameAttribute.PersianName("همه")] All = 1,
-        [PersianNameAttribute.PersianName("مشتریان")] Customer = 2,
+        [PersianNameAttribute.PersianName("اشخاص")] Customer = 2,
         [PersianNameAttribute.PersianName("هزینه ها")] Hazine = 3,
-        [PersianNameAttribute.PersianName("بانک ها")] Bank = 1,
-        [PersianNameAttribute.PersianName("صندوق ها")] Sandouq = 2,
-        [PersianNameAttribute.PersianName("کاربران")] Users = 3,
-        [PersianNameAttribute.PersianName("حساب تفصیلی")] Tafsil = 3
+        [PersianNameAttribute.PersianName("بانک ها")] Bank = 4,
+        [PersianNameAttribute.PersianName("صندوق ها")] Sandouq = 5,
+        [PersianNameAttribute.PersianName("حساب تفصیلی")] Tafsil = 6
     }
     public enum EnGroup : short
     {
@@ -38,7 +75,6 @@ namespace Services
         Users = 4,
         PeopleGroups = 5,
         Peoples = 6,
-        Hazine = 7,
         BuildingAccountType = 8,
         BuildingCondition = 9,
         BuildingType = 10,
@@ -52,7 +88,6 @@ namespace Services
         Contract = 18,
         Reception = 19,
         Pardakht = 20,
-        GardeshHesab = 21,
         BuildingOptions = 22
     }
     public enum ResponseStatus
@@ -238,9 +273,7 @@ namespace Services
     }
     public enum EnAccountingType : short
     {
-        [PersianNameAttribute.PersianName("اشخاص")] Peoples = 0,
-        [PersianNameAttribute.PersianName("هزینه ها")] Hazine = 1,
-        [PersianNameAttribute.PersianName("کاربران")] Users = 2
+        [PersianNameAttribute.PersianName("اشخاص")] Peoples = 0
     }
     public enum EnUserType : short
     {
@@ -289,7 +322,10 @@ namespace Services
     public enum EnSanadType : short
     {
         [PersianNameAttribute.PersianName("سند دستی")] Dasti = 0,
-        [PersianNameAttribute.PersianName("سند اتومات")] Auto = 1
+        [PersianNameAttribute.PersianName("سند افتتاحیه")] Eftetahiye = 1,
+        [PersianNameAttribute.PersianName("سند اختتامیه")] Ekhtetamiye = 2,
+        [PersianNameAttribute.PersianName("سند اتومات")] Auto = 3,
+        [PersianNameAttribute.PersianName("سند یادداشت")] Note = 4
     }
     public enum ENSource
     {

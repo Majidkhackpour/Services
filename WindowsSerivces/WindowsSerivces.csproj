@@ -97,6 +97,7 @@
   <ItemGroup>
     <Compile Include="clsLoadNewForm.cs" />
     <Compile Include="ContextMenuSetter.cs" />
+    <Compile Include="Extentions.cs" />
     <Compile Include="frmManagementPass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +121,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\RealState\RealState\Notification\Notification.csproj">
+      <Project>{44a0f109-df64-482c-befb-df20038ee4df}</Project>
+      <Name>Notification</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Services\Services.csproj">
       <Project>{dcb5bde2-6238-422d-ad4e-f53afce9bf30}</Project>
       <Name>Services</Name>

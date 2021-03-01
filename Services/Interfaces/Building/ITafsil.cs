@@ -11,5 +11,7 @@ namespace Services.Interfaces.Building
         HesabType HesabType { get; set; }
         DateTime DateM { get; set; }
         decimal Account { get; set; }
+        decimal AccountFirst { get; set; }
+        bool isSystem { get; set; }
     }
 }
