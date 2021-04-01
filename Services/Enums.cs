@@ -39,7 +39,8 @@ namespace Services
         [PersianNameAttribute.PersianName("برگشتی")] Bargashti = 3,
         [PersianNameAttribute.PersianName("عودت شده")] OudatShode = 4,
         [PersianNameAttribute.PersianName("ابطال شده")] BatelShode = 5,
-        [PersianNameAttribute.PersianName("امانت داده شده")] Amanati = 6
+        [PersianNameAttribute.PersianName("امانت داده شده")] Amanati = 6,
+        [PersianNameAttribute.PersianName("خرج شده")] KharjShode = 7
     }
     public enum EnCheckM
     {
@@ -49,8 +50,14 @@ namespace Services
         [PersianNameAttribute.PersianName("برگشتی")] Bargashti = 3,
         [PersianNameAttribute.PersianName("واگذار شده")] Vagozar = 4,
         [PersianNameAttribute.PersianName("نقد شده")] Naqd = 5,
-        [PersianNameAttribute.PersianName("باطل شده")] Batel = 6,
-        [PersianNameAttribute.PersianName("وصول شده")] Vosool = 7
+        [PersianNameAttribute.PersianName("باطل شده")] Batel = 6
+    }
+    public enum EnOperation
+    {
+        [PersianNameAttribute.PersianName("نقد")] Naqd = 1,
+        [PersianNameAttribute.PersianName("حواله")] Havale = 2,
+        [PersianNameAttribute.PersianName("چک شخصی")] CheckSh = 3,
+        [PersianNameAttribute.PersianName("چک مشتری")] CheckM = 4,
     }
     public enum HesabType
     {
@@ -292,7 +299,8 @@ namespace Services
         [PersianNameAttribute.PersianName("[همه گروه ها]")] All = 0,
         [PersianNameAttribute.PersianName("اشخاص")] Peoples = 1,
         [PersianNameAttribute.PersianName("کاربران")] Users = 2,
-        [PersianNameAttribute.PersianName("دریافت شده از دیوار")] Divar = 3
+        [PersianNameAttribute.PersianName("دریافت شده از دیوار")] Divar = 3,
+        [PersianNameAttribute.PersianName("مشاوران")] Advisor = 4
     }
     public enum EnSecurityQuestion : short
     {
@@ -761,6 +769,7 @@ namespace Services
         Pardakht_List = 13,
         SmsSent_List = 14,
         AdvSent_List = 15,
-        Sood_Zian = 16
+        Sood_Zian = 16,
+        Sanad = 17
     }
 }

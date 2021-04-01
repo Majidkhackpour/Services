@@ -123,10 +123,7 @@ namespace Services
 
             return ret;
         }
-        public static string ThreeSeparator(this decimal value)
-        {
-            return value.ToString("#,0");
-        }
+        public static string ThreeSeparator(this decimal value) => value.ToString("#,0");
         private const int ChunckSizeKB = 100000;
         public static readonly DateTime MinValidDateTime = DateTime.Parse("1900/01/01 00:00:00");
         public static async Task<ReturnedSaveFuncInfo> FileTryReplceadeAsync(string FullFilePath, byte[] data, short tryCount = 10)
@@ -925,6 +922,20 @@ namespace Services
                 if (value < 0) return "بدهکار";
                 if (value > 0) return "بستانکار";
                 return "بی حساب";
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+                return "";
+            }
+        }
+        public static string AccountDiagnosisForPrint(this decimal value)
+        {
+            try
+            {
+                if (value < 0) return "بد";
+                if (value > 0) return "بس";
+                return "";
             }
             catch (Exception ex)
             {

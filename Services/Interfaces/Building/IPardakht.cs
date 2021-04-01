@@ -1,18 +1,16 @@
 ﻿using System;
+using Servicess.Interfaces;
 
-namespace Servicess.Interfaces.Building
+namespace Services.Interfaces.Building
 {
     public interface IPardakht : IHasGuid
     {
-        Guid Payer { get; set; }
-        DateTime CreateDate { get; set; }
+        Guid TafsilGuid { get; set; }
+        Guid MoeinGuid { get; set; }
+        DateTime DateM { get; set; }
         string Description { get; set; }
-        decimal NaqdPrice { get; set; }
-        decimal BankPrice { get; set; }
-        string FishNo { get; set; }
-        decimal Check { get; set; }
-        string CheckNo { get; set; }
-        string SarResid { get; set; }
-        string BankName { get; set; }
+        Guid UserGuid { get; set; }
+        long Number { get; set; }
+        long SanadNumber { get; set; }
     }
 }

@@ -66,6 +66,8 @@ namespace Services.DefaultCoding
         public Guid CLSTafsil5010401 => Guid.Parse("545b0cb8-c2e1-4600-81c9-4d2f328df35b");
         public Guid CLSTafsil5010601 => Guid.Parse("135f4311-38b5-4602-a1b3-74db7d13707a");
         public Guid CLSTafsil5011001 => Guid.Parse("ab1d0dad-122f-4ec0-80ed-ce8a91b7dc07");
+        public Guid CLSTafsil6020101 => Guid.Parse("ef69f40c-c3bb-4ec2-bbcd-000fa1369e9c");
+        public Guid CLSTafsil6010301 => Guid.Parse("CC42551D-1D9A-4CC4-BFF9-002416E21B36");
         public Guid CLSTafsil7010101 => Guid.Parse("eed83ec0-34ce-4198-b63e-61f52fb70d40");
         public Guid CLSTafsil7010102 => Guid.Parse("13dc4fa7-e4f7-4154-9141-743d01c59567");
         public Guid CLSTafsil7010103 => Guid.Parse("483fcabf-1b0a-41df-8d53-23babbacf02c");

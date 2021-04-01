@@ -27,7 +27,18 @@ namespace Servicess.Interfaces.Building
         decimal Delay { get; set; }
         string Description { get; set; }
         EnRequestType Type { get; set; }
-        Guid BazaryabGuid { get; set; }
+        Guid? BazaryabGuid { get; set; }
         decimal BazaryabPrice { get; set; }
+        long SanadNumber { get; set; }
+        EnContractBabat fBabat { get; set; }
+        EnContractBabat sBabat { get; set; }
+        decimal FirstDiscount { get; set; }
+        decimal SecondDiscount { get; set; }
+        decimal FirstTax { get; set; }
+        decimal FirstAvarez { get; set; }
+        decimal SecondTax { get; set; }
+        decimal SecondAvarez { get; set; }
+        decimal FirstTotalPrice { get; set; }
+        decimal SecondTotalPrice { get; set; }
     }
 }

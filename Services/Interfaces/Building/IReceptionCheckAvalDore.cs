@@ -3,13 +3,11 @@ using Servicess.Interfaces;
 
 namespace Services.Interfaces.Building
 {
-    public interface IReceptionCheck : IHasGuid
+    public interface IReceptionCheckAvalDore : IHasGuid
     {
         string BankName { get; set; }
         DateTime DateM { get; set; }
         DateTime DateSarResid { get; set; }
-        Guid? MasterGuid { get; set; }
-        bool isAvalDore { get; set; }
         string Description { get; set; }
         string CheckNumber { get; set; }
         string PoshtNomre { get; set; }
@@ -17,5 +15,7 @@ namespace Services.Interfaces.Building
         EnCheckM CheckStatus { get; set; }
         Guid SandouqTafsilGuid { get; set; }
         Guid SandouqMoeinGuid { get; set; }
+        Guid TafsilGuid { get; set; }
+        Guid UserGuid { get; set; }
     }
 }

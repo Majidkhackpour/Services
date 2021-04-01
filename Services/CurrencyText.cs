@@ -25,7 +25,6 @@ namespace Services
                 return "";
             }
         }
-
         public static string fixForUrl(this string input)
         {
             try
@@ -74,7 +73,6 @@ namespace Services
                 return "";
             }
         }
-
         public static string RemoveNoNumbers(this string Input, string Replcment)
         {
             try
@@ -99,7 +97,6 @@ namespace Services
                 return null;
             }
         }
-
         public static List<string> SplitString(this string input, string SpliterList = " /\\\r\n\t)(-_=+%$#@*|><,`~'\":.?؟،")
         {
             if (string.IsNullOrEmpty(input))
@@ -107,7 +104,6 @@ namespace Services
             input = input.ToLower().FixString();
             return input.Split(SpliterList.ToCharArray())?.ToList();
         }
-
         public static string FixString(this string input)
         {
             try
@@ -138,7 +134,6 @@ namespace Services
                 return null;
             }
         }
-
         private static string _DecimalPoint = "";
         public static string DecimalPoint
         {
@@ -162,7 +157,6 @@ namespace Services
                 }
             }
         }
-
         private static string _decimalSeprator = "";
         public static string decimalSeprator
         {
@@ -183,7 +177,6 @@ namespace Services
                 }
             }
         }
-
         public static string RemoveNoNumbers_Dot(string Input, string Replcment)
         {
             try
