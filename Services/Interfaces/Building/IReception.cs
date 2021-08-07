@@ -3,7 +3,7 @@ using Servicess.Interfaces;
 
 namespace Services.Interfaces.Building
 {
-    public interface IReception : IHasGuid
+    public interface IReception : IHasGuid, IHasModified
     {
         long Number { get; set; }
         DateTime DateM { get; set; }
@@ -12,5 +12,9 @@ namespace Services.Interfaces.Building
         Guid MoeinGuid { get; set; }
         Guid UserGuid { get; set; }
         long SanadNumber { get; set; }
+        decimal SumCheck { get; set; }
+        decimal SumHavale { get; set; }
+        decimal SumNaqd { get; set; }
+        decimal Sum { get; set; }
     }
 }

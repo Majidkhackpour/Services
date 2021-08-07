@@ -17,10 +17,15 @@ namespace Services
             else txt.BackColor = Color.Silver;
             txt.ForeColor = Color.Black;
         }
-        public static void Focus(Label lbl)
+        public static void Focus(Label lbl,bool isDep=false)
         {
-            var colour = ColorTranslator.FromHtml("#50cbb0");
-            lbl.ForeColor = colour;
+            if (isDep)
+            {
+                var colour = ColorTranslator.FromHtml("#50cbb0");
+                lbl.ForeColor = colour;
+            }
+            else
+                lbl.ForeColor = Color.Red;
         }
         public static void Follow(TextBox txt)
         {

@@ -2,7 +2,7 @@
 
 namespace Servicess.Interfaces.Building
 {
-    public interface ISimcard : IHasGuid
+    public interface ISimcard : IHasGuid, IHasStatus
     {
         long Number { get; set; }
         string Owner { get; set; }

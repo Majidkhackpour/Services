@@ -3,7 +3,7 @@ using Servicess.Interfaces;
 
 namespace Services.Interfaces.Building
 {
-    public interface IMoein : IHasGuid
+    public interface IMoein : IHasGuid, IHasModified
     {
         string Name { get; set; }
         string Code { get; set; }

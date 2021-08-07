@@ -3,10 +3,11 @@ using Services;
 
 namespace Servicess.Interfaces.Building
 {
-    public interface IContract : IHasGuid
+    public interface IContract : IHasGuid, IHasStatus, IHasModified
     {
         DateTime DateM { get; set; }
         long Code { get; set; }
+        string CodeInArchive { get; set; }
         bool IsTemp { get; set; }
         Guid FirstSideGuid { get; set; }
         Guid SecondSideGuid { get; set; }

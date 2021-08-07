@@ -3,7 +3,7 @@ using Servicess.Interfaces;
 
 namespace Services.Interfaces.Building
 {
-    public interface IPardakhtNaqd : IHasGuid
+    public interface IPardakhtNaqd : IHasGuid, IHasModified
     {
         string Description { get; set; }
         decimal Price { get; set; }

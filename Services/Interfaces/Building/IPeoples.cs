@@ -2,7 +2,7 @@
 
 namespace Servicess.Interfaces.Building
 {
-    public interface IPeoples : IHasGuid
+    public interface IPeoples : IHasGuid, IHasStatus, IHasModified
     {
         string Code { get; set; }
         string Name { get; set; }

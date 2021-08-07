@@ -8,11 +8,84 @@ namespace Services
         [PersianNameAttribute.PersianName("ماه")] Mounth = 2,
         [PersianNameAttribute.PersianName("روز")] Day = 3
     }
+    public enum EnForms
+    {
+        [PersianNameAttribute.PersianName("مدیریت اشخاص")] Peoples = 1,
+        [PersianNameAttribute.PersianName("مدیریت شهرها")] Cities = 2,
+        [PersianNameAttribute.PersianName("مدیریت مناطق")] Regions = 3,
+        [PersianNameAttribute.PersianName("امکانات املاک")] BuildingOptions = 4,
+        [PersianNameAttribute.PersianName("نوع کاربری ملک")] BuildingAccountType = 5,
+        [PersianNameAttribute.PersianName("کفپوش")] FloorCover = 6,
+        [PersianNameAttribute.PersianName("سرویس آشپزخانه")] KitchenService = 7,
+        [PersianNameAttribute.PersianName("انواع سند")] DocumentType = 8,
+        [PersianNameAttribute.PersianName("ارجحیت اجاره")] RentalAouthority = 9,
+        [PersianNameAttribute.PersianName("نمای ساختمان")] BuildingView = 10,
+        [PersianNameAttribute.PersianName("نوع بنا")] BuildingCondition = 11,
+        [PersianNameAttribute.PersianName("نوع ملک")] BuildingType = 12,
+        [PersianNameAttribute.PersianName("مدیریت املاک")] Building = 13,
+        [PersianNameAttribute.PersianName("ثبت سریع ملک")] BuildingFast = 14,
+        [PersianNameAttribute.PersianName("جستجوی پیشرفته ملک")] AdvancedSearch = 15,
+        [PersianNameAttribute.PersianName("بایگانی املاک")] BuildingArchive = 16,
+        [PersianNameAttribute.PersianName("تطبیق ملک و درخواست")] BuildingMatch = 17,
+        [PersianNameAttribute.PersianName("مدیریت قراردادها")] Contract = 18,
+        [PersianNameAttribute.PersianName("مدیریت درخواست ها")] Request = 19,
+        [PersianNameAttribute.PersianName("مدیریت کاربران")] Users = 20,
+        [PersianNameAttribute.PersianName("سطوح دسترسی")] UserAccess = 21,
+        [PersianNameAttribute.PersianName("مدیریت مشاوران")] Advisor = 22,
+        [PersianNameAttribute.PersianName("هزینه ها")] Hazine = 23,
+        [PersianNameAttribute.PersianName("دریافت")] Daryaft = 24,
+        [PersianNameAttribute.PersianName("پرداخت")] Pardakht = 25,
+        [PersianNameAttribute.PersianName("اسناد")] Sanad = 26,
+        [PersianNameAttribute.PersianName("گزارشات حسابداری")] AccountingReport = 27,
+        [PersianNameAttribute.PersianName("حساب های کل و معین")] KolMoein = 28,
+        [PersianNameAttribute.PersianName("حساب های تفصیلی")] Tafsil = 29,
+        [PersianNameAttribute.PersianName("مدیریت صندوق ها")] Sandouq = 30,
+        [PersianNameAttribute.PersianName("مدیریت حساب های بانکی")] Bank = 31,
+        [PersianNameAttribute.PersianName("مدیریت دسته چک ها")] CheckBook = 32,
+        [PersianNameAttribute.PersianName("چک های دریافتنی")] ReceptionCheck = 33,
+        [PersianNameAttribute.PersianName("چک های پرداختنی")] PardakhtCheck = 34,
+        [PersianNameAttribute.PersianName("تنظیمات برنامه")] Setting = 35,
+        [PersianNameAttribute.PersianName("دفترچه تلفن")] Phonebook = 36,
+        [PersianNameAttribute.PersianName("دفترچه یادداشت")] Note = 37,
+        [PersianNameAttribute.PersianName("مدیریت پنل ارسال پیامک")] SmsPanel = 38,
+        [PersianNameAttribute.PersianName("ارسال پیامک")] SendSms = 39,
+        [PersianNameAttribute.PersianName("آگهی تبلیغاتی")] Advertise = 40,
+        [PersianNameAttribute.PersianName("پشتیبان گیری")] BackUp = 41,
+        [PersianNameAttribute.PersianName("بازگردانی فایل پشتیبان")] Restore = 42,
+        [PersianNameAttribute.PersianName("مدیریت ویژه")] Advance = 43,
+        [PersianNameAttribute.PersianName("روزشمار")] Taqvim = 44
+    }
+    public enum EnDivarCategory
+    {
+        [PersianNameAttribute.PersianName("اجاره آپارتمان")] RentAppartment = 1,
+        [PersianNameAttribute.PersianName("اجاره خانه و ویلا")] RentVilla = 2,
+        [PersianNameAttribute.PersianName("فروش آپارتمان")] BuyAppartment = 3,
+        [PersianNameAttribute.PersianName("فروش خانه و ویلا")] BuyVilla = 4,
+        [PersianNameAttribute.PersianName("فروش زمین و کلنگی")] BuyOldHouse = 5,
+        [PersianNameAttribute.PersianName("فروش دفترکار")] BuyOffice = 6,
+        [PersianNameAttribute.PersianName("فروش مغازه")] BuyStore = 7,
+        [PersianNameAttribute.PersianName("فروش زمین")] BuyGuard = 8,
+        [PersianNameAttribute.PersianName("اجاره دفترکار")] RentOffice = 9,
+        [PersianNameAttribute.PersianName("اجاره مغازه")] RentStore = 10,
+        [PersianNameAttribute.PersianName("اجاره زمین")] RentGuard = 11,
+        [PersianNameAttribute.PersianName("مشارکت در ساخت")] ContributionConstruction = 12,
+        [PersianNameAttribute.PersianName("پیش فروش")] PreBuy = 13
+    }
     public enum EnTelegramType
     {
         [PersianNameAttribute.PersianName("کانال")] Channel = 1,
         [PersianNameAttribute.PersianName("شماره")] Number = 2,
         [PersianNameAttribute.PersianName("گروه")] Group = 3
+    }
+    public enum ServerStatus : short
+    {
+        [PersianNameAttribute.PersianName("نامشخص")] None = 0,
+        [PersianNameAttribute.PersianName("ارسال شده")] Sent = 1,
+        [PersianNameAttribute.PersianName("تحویل شده")] Delivered = 2,
+        [PersianNameAttribute.PersianName("خطا در ارسال")] SendError = 3,
+        [PersianNameAttribute.PersianName("خطا در تحویل")] DeliveryError = 4,
+        [PersianNameAttribute.PersianName("تحویل مستقیم")] DirectDelivery = 5
+
     }
     public enum EnSanadStatus : short
     {
@@ -62,10 +135,10 @@ namespace Services
     public enum HesabType
     {
         [PersianNameAttribute.PersianName("همه")] All = 1,
-        [PersianNameAttribute.PersianName("اشخاص")] Customer = 2,
-        [PersianNameAttribute.PersianName("هزینه ها")] Hazine = 3,
-        [PersianNameAttribute.PersianName("بانک ها")] Bank = 4,
-        [PersianNameAttribute.PersianName("صندوق ها")] Sandouq = 5,
+        [PersianNameAttribute.PersianName("شخص")] Customer = 2,
+        [PersianNameAttribute.PersianName("هزینه")] Hazine = 3,
+        [PersianNameAttribute.PersianName("بانک")] Bank = 4,
+        [PersianNameAttribute.PersianName("صندوق")] Sandouq = 5,
         [PersianNameAttribute.PersianName("حساب تفصیلی")] Tafsil = 6
     }
     public enum EnGroup : short
@@ -95,7 +168,17 @@ namespace Services
         Contract = 18,
         Reception = 19,
         Pardakht = 20,
-        BuildingOptions = 22
+        BuildingOptions = 22,
+        BuildingRelatedOptions = 23,
+        RequestRegions = 24,
+        PhoneBook = 25,
+        Advisor = 26,
+        Bank = 27,
+        Kol = 28,
+        Moein = 29,
+        Tafsil = 30,
+        Sanad = 31,
+        SanadDetail = 32
     }
     public enum ResponseStatus
     {
@@ -124,7 +207,11 @@ namespace Services
         [PersianNameAttribute.PersianName("A4")] Pdf_A4 = 0,
         [PersianNameAttribute.PersianName("A5")] Pdf_A5 = 1,
         [PersianNameAttribute.PersianName("Excel")] Excel = 2,
-        [PersianNameAttribute.PersianName("None")] None = 3
+        [PersianNameAttribute.PersianName("ترازو 2 ستونه")] Taraz2 = 3,
+        [PersianNameAttribute.PersianName("تراز 4 ستونه")] Taraz4 = 4,
+        [PersianNameAttribute.PersianName("تراز 6 ستونه")] Taraz6 = 5,
+        [PersianNameAttribute.PersianName("تراز 8 ستونه")] Taraz8 = 6,
+        [PersianNameAttribute.PersianName("None")] None = 7
     }
     public enum EnCustomerLogType
     {
@@ -147,7 +234,8 @@ namespace Services
         [PersianNameAttribute.PersianName("حذف")] Delete = 2,
         [PersianNameAttribute.PersianName("فعال کردن")] Enable = 3,
         [PersianNameAttribute.PersianName("ورود به سیستم")] Login = 4,
-        [PersianNameAttribute.PersianName("خروج از سیستم")] Logout = 5
+        [PersianNameAttribute.PersianName("خروج از سیستم")] Logout = 5,
+        [PersianNameAttribute.PersianName("None")] None = 100
     }
     public enum EnLogPart : short
     {
@@ -169,10 +257,8 @@ namespace Services
         [PersianNameAttribute.PersianName("املاک")] Building = 15,
         [PersianNameAttribute.PersianName("درخواست ها")] BuildingRequest = 16,
         [PersianNameAttribute.PersianName("قولنامه ها")] Contracts = 17,
-        [PersianNameAttribute.PersianName("هزینه ها")] Hazine = 18,
-        [PersianNameAttribute.PersianName("دریافت")] Reception = 19,
-        [PersianNameAttribute.PersianName("پرداخت")] Pardakht = 20,
-        [PersianNameAttribute.PersianName("سند حسابداری")] Sanad = 21
+        [PersianNameAttribute.PersianName("دریافت")] Reception = 18,
+        [PersianNameAttribute.PersianName("پرداخت")] Pardakht = 19
     }
     public enum StatusCode
     {
@@ -389,7 +475,8 @@ namespace Services
         [PersianNameAttribute.PersianName("زیربسته ارتباط با وب سایت")] WebSite = 68,
         [PersianNameAttribute.PersianName("زیربسته ارتباط با اپلیکیشن موبایل")] MobileApp = 53,
         [PersianNameAttribute.PersianName("زیربسته راه اندازی تحت شبکه")] Network = 62,
-        [PersianNameAttribute.PersianName("زیربسته حسابداری")] Accounting = 50
+        [PersianNameAttribute.PersianName("زیربسته حسابداری")] Accounting = 50,
+        [PersianNameAttribute.PersianName("وب سرویس ارتباط با سرور")] WebService = 91
     }
     public enum ServiceState
     {
@@ -770,6 +857,11 @@ namespace Services
         SmsSent_List = 14,
         AdvSent_List = 15,
         Sood_Zian = 16,
-        Sanad = 17
+        Sanad = 17,
+        Roozname = 18,
+        TarazAzmayeshi = 19,
+        TarazHesab = 20,
+        DepartmentOrder = 21,
+        Contract_Rasmi_One = 22
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Services.Interfaces.Building
 {
-    public interface IAdvisor : IHasGuid
+    public interface IAdvisor : IHasGuid, IHasStatus, IHasModified
     {
         string Name { get; set; }
         string Address { get; set; }

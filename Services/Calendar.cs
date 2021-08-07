@@ -62,7 +62,6 @@ namespace Services
                 return DateTime.Now;
             }
         }
-
         public static bool CheckShamsiDate(string DateParam)
         {
             try
@@ -90,7 +89,6 @@ namespace Services
                 return false;
             }
         }
-
         public static string MiladiToShamsi(DateTime? DateM)
         {
             try
@@ -103,7 +101,6 @@ namespace Services
                 return null;
             }
         }
-
         public static string ToShamsiDateTime(DateTime dateM)
         {
             try
@@ -154,7 +151,6 @@ namespace Services
                 return null;
             }
         }
-
         public static string ToShortDate(DateTime dateM)
         {
             try
@@ -169,7 +165,6 @@ namespace Services
                 return null;
             }
         }
-
         public static int GetYearOfDateSh(string dateSh)
         {
             try
@@ -186,7 +181,6 @@ namespace Services
                 return 0;
             }
         }
-
         public static int GetMonthOfDateSh(string dateSh)
         {
             try
@@ -203,7 +197,6 @@ namespace Services
                 return 0;
             }
         }
-
         public static string ToLongDateWithoutYear(DateTime dateM)
         {
             try
@@ -220,7 +213,6 @@ namespace Services
                 return null;
             }
         }
-
         public static string ToLongTimeString(DateTime dateM)
         {
             try
@@ -239,7 +231,6 @@ namespace Services
                 return null;
             }
         }
-
         public static string Minutes2TimeFormat(int min)
         {
             try
@@ -263,7 +254,6 @@ namespace Services
                 return "00:00";
             }
         }
-
         private static readonly string[] monthNames = { "فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند" };
         /// <summary>
         /// اخرین روز ماه جاری شمسی را برمیگرداند
@@ -323,7 +313,6 @@ namespace Services
                 return DateTime.Now;
             }
         }
-
         public static int EndDayOfMonth(short civilMonth, int civilyear)
         {
             try
@@ -341,7 +330,6 @@ namespace Services
                 return 30;
             }
         }
-
         public static int GetDayOfDateSh(string dateSh)
         {
             try
@@ -356,7 +344,6 @@ namespace Services
                 return 0;
             }
         }
-
         public static string Today()
         {
             try
@@ -369,7 +356,6 @@ namespace Services
                 return null;
             }
         }
-
         public static string GetPartday(string date, EnPartDate type)
         {
             try
@@ -391,7 +377,6 @@ namespace Services
                 return null;
             }
         }
-
         public static int GetDaysInMonth(int y, int m)
         {
             try
@@ -406,7 +391,6 @@ namespace Services
                 return 0;
             }
         }
-
         public static string AddToShamsiDate(int days, string dateSH, EnPartDate part)
         {
             try
@@ -445,7 +429,6 @@ namespace Services
                 return null;
             }
         }
-
         public static string GetDayNameOfWeek(DateTime dateM)
         {
             try
@@ -468,7 +451,6 @@ namespace Services
                 return null;
             }
         }
-
         public static string DateToFormatTime(DateTime dateM)
         {
             try
@@ -493,7 +475,6 @@ namespace Services
                 return null;
             }
         }
-
         public static string GetFullCalendar()
         {
             var res = "";

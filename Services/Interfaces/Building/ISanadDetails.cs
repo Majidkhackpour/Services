@@ -3,7 +3,7 @@ using Servicess.Interfaces;
 
 namespace Services.Interfaces.Building
 {
-    public interface ISanadDetails : IHasGuid
+    public interface ISanadDetails : IHasGuid, IHasModified
     {
         Guid MasterGuid { get; set; }
         Guid MoeinGuid { get; set; }

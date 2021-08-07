@@ -3,7 +3,7 @@ using Servicess.Interfaces;
 
 namespace Services.Interfaces.Building
 {
-    public interface ICheckPage : IHasGuid
+    public interface ICheckPage : IHasGuid,IHasModified
     {
         Guid CheckGuid { get; set; }
         DateTime? DatePardakht { get; set; }

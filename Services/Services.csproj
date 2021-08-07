@@ -85,6 +85,8 @@
   <ItemGroup>
     <Compile Include="Access\AccessLevel.cs" />
     <Compile Include="Access\AccountPerformenceAccess.cs" />
+    <Compile Include="Access\AdvisorAccess.cs" />
+    <Compile Include="Access\BankAccess.cs" />
     <Compile Include="Access\BuildingAccess.cs" />
     <Compile Include="Access\BuildingAccountTypeAccess.cs" />
     <Compile Include="Access\BuildingConditionAccess.cs" />
@@ -93,8 +95,11 @@
     <Compile Include="Access\BuildingSearchAccess.cs" />
     <Compile Include="Access\BuildingTypeAccess.cs" />
     <Compile Include="Access\BuildingViewAccess.cs" />
+    <Compile Include="Access\CheckMAccess.cs" />
+    <Compile Include="Access\CheckShAccess.cs" />
     <Compile Include="Access\CityAccess.cs" />
     <Compile Include="Access\ContractAccess.cs" />
+    <Compile Include="Access\DasteCheckAccess.cs" />
     <Compile Include="Access\DocumentTypeAccess.cs" />
     <Compile Include="Access\FloorCoverAccess.cs" />
     <Compile Include="Access\HazineAccess.cs" />
@@ -106,11 +111,15 @@
     <Compile Include="Access\RegionAccess.cs" />
     <Compile Include="Access\RentalAuthorityAccess.cs" />
     <Compile Include="Access\SanadAccess.cs" />
+    <Compile Include="Access\SandouqAccess.cs" />
     <Compile Include="Access\SendSmsAccess.cs" />
     <Compile Include="Access\SimcardAccess.cs" />
     <Compile Include="Access\SmsPanelAccess.cs" />
+    <Compile Include="Access\TafsilAccess.cs" />
     <Compile Include="Access\UserAccess.cs" />
     <Compile Include="Access\UserAccLevelAccess.cs" />
+    <Compile Include="AndroidViewModels\BuildingListViewModel.cs" />
+    <Compile Include="AndroidViewModels\BuildingViewModel.cs" />
     <Compile Include="DefaultCoding\KolCodingsDefaults.cs" />
     <Compile Include="DefaultCoding\MoeinCodingsDefaults.cs" />
     <Compile Include="DefaultCoding\ParentDefaults.cs" />
@@ -126,16 +135,19 @@
     <Compile Include="Interfaces\Building\IBuildingAccountType.cs" />
     <Compile Include="Interfaces\Building\IBuildingCondition.cs" />
     <Compile Include="Interfaces\Building\IBuildingGallery.cs" />
+    <Compile Include="Interfaces\Building\IBuildingMedia.cs" />
     <Compile Include="Interfaces\Building\IBuildingOptions.cs" />
     <Compile Include="Interfaces\Building\IBuildingRelatedOptions.cs" />
     <Compile Include="Interfaces\Building\IBuildingRequest.cs" />
     <Compile Include="Interfaces\Building\IBuildingRequestRegion.cs" />
     <Compile Include="Interfaces\Building\IBuildingType.cs" />
     <Compile Include="Interfaces\Building\IBuildingView.cs" />
+    <Compile Include="Interfaces\Building\ICalendar.cs" />
     <Compile Include="Interfaces\Building\ICheckPage.cs" />
     <Compile Include="Interfaces\Building\ICities.cs" />
     <Compile Include="Interfaces\Building\IContract.cs" />
     <Compile Include="Interfaces\Building\IDasteCheck.cs" />
+    <Compile Include="Interfaces\Building\IDesc.cs" />
     <Compile Include="Interfaces\Building\IDocumentType.cs" />
     <Compile Include="Interfaces\Building\IFileInfo.cs" />
     <Compile Include="Interfaces\Building\IFloorCover.cs" />
@@ -179,6 +191,8 @@
     <Compile Include="Enums.cs" />
     <Compile Include="ErrorHandler.cs" />
     <Compile Include="Etentions.cs" />
+    <Compile Include="Interfaces\Building\IWorkingRange.cs" />
+    <Compile Include="Interfaces\Department\IBackUpLog.cs" />
     <Compile Include="Interfaces\IErrorHandler.cs" />
     <Compile Include="Interfaces\Department\IAndroids.cs" />
     <Compile Include="Interfaces\Department\ICustomerLog.cs" />
@@ -207,6 +221,7 @@
     <Compile Include="Serializable.cs" />
     <Compile Include="SortableBindingList.cs" />
     <Compile Include="Utilities.cs" />
+    <Compile Include="VersionAccess.cs" />
     <Compile Include="WebErrorLog.cs" />
     <Compile Include="WebPageContainer.cs" />
     <Compile Include="WebResponse.cs" />

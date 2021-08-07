@@ -2,7 +2,7 @@
 
 namespace Servicess.Interfaces.Building
 {
-    public interface IBuildingRequest : IHasGuid
+    public interface IBuildingRequest : IHasGuid, IHasStatus, IHasModified
     {
         DateTime CreateDate { get; set; }
         Guid AskerGuid { get; set; }

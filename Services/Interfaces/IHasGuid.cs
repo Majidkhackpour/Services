@@ -1,11 +1,20 @@
 ﻿using System;
+using Services;
 
 namespace Servicess.Interfaces
 {
     public interface IHasGuid
     {
         Guid Guid { get; set; }
-        DateTime Modified { get; set; }
+    }
+    public interface IHasStatus
+    {
         bool Status { get; set; }
+    }
+    public interface IHasModified
+    {
+        DateTime Modified { get; set; }
+        ServerStatus ServerStatus { get; set; }
+        DateTime ServerDeliveryDate { get; set; }
     }
 }

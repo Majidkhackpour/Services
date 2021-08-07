@@ -3,7 +3,7 @@ using Servicess.Interfaces;
 
 namespace Services.Interfaces.Building
 {
-    public interface IPardakhtCheckShakhsi : IHasGuid
+    public interface IPardakhtCheckShakhsi : IHasGuid, IHasModified
     {
         DateTime DateSarResid { get; set; }
         string Description { get; set; }

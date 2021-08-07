@@ -1,6 +1,6 @@
 ﻿namespace Servicess.Interfaces.Building
 {
-    public interface ISmsPanels : IHasGuid
+    public interface ISmsPanels : IHasGuid, IHasStatus
     {
         string Name { get; set; }
         string Sender { get; set; }

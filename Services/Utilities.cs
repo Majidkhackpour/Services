@@ -2,7 +2,9 @@
 using System.IO;
 using System.Net;
 using System.Net.NetworkInformation;
+using System.Net.Security;
 using System.Net.Sockets;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using Nito.AsyncEx;
 
@@ -68,6 +70,19 @@ namespace Services
             }
         }
         public static string GetIp() => AsyncContext.Run(GetNetworkIpAddress);
-        public static string WebApi = "http://192.168.43.61:45455";
+        public static string WebApi = "https://aarad.ir";
+        //public static string WebApi = "https://localhost:44358/";
+        public static void NEVER_EAT_POISON_Disable_CertificateValidation()
+        {
+            ServicePointManager.ServerCertificateValidationCallback =
+                delegate (
+                    object s,
+                    X509Certificate certificate,
+                    X509Chain chain,
+                    SslPolicyErrors sslPolicyErrors
+                ) {
+                    return true;
+                };
+        }
     }
 }

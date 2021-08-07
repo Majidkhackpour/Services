@@ -1,7 +1,7 @@
-﻿using System;
-using System.Windows.Forms;
-using Notification;
+﻿using Notification;
 using Services;
+using System;
+using System.Windows.Forms;
 
 namespace WindowsSerivces
 {
@@ -12,7 +12,63 @@ namespace WindowsSerivces
             try
             {
                 var frmError = new FrmShowErrorMessage(res, title);
-                frmError.ShowDialog();
+                frmError.ShowDialog(frm);
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+            }
+        }
+        public static void ShowMessage(this Form frm, string message, string title = "")
+        {
+            try
+            {
+                var res = new ReturnedSaveFuncInfo();
+                res.AddInformation(message);
+                var frmError = new FrmShowErrorMessage(res, title);
+                frmError.ShowDialog(frm);
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+            }
+        }
+        public static void ShowWarning(this Form frm, string message, string title = "")
+        {
+            try
+            {
+                var res = new ReturnedSaveFuncInfo();
+                res.AddWarning(message);
+                var frmError = new FrmShowErrorMessage(res, title);
+                frmError.ShowDialog(frm);
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+            }
+        }
+        public static void ShowMessage(this UserControl frm, string message, string title = "")
+        {
+            try
+            {
+                var res = new ReturnedSaveFuncInfo();
+                res.AddInformation(message);
+                var frmError = new FrmShowErrorMessage(res, title);
+                frmError.ShowDialog(frm);
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+            }
+        }
+        public static void ShowWarning(this UserControl frm, string message, string title = "")
+        {
+            try
+            {
+                var res = new ReturnedSaveFuncInfo();
+                res.AddWarning(message);
+                var frmError = new FrmShowErrorMessage(res, title);
+                frmError.ShowDialog(frm);
             }
             catch (Exception ex)
             {

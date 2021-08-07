@@ -6,6 +6,7 @@ namespace Servicess.Interfaces.Department
     {
         Guid OrderGuid { get; set; }
         Guid PrdGuid { get; set; }
+        int Count { get; set; }
         decimal Price { get; set; }
         decimal Discount { get; set; }
         decimal Total { get; set; }

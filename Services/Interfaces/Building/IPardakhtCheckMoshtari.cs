@@ -3,7 +3,7 @@ using Servicess.Interfaces;
 
 namespace Services.Interfaces.Building
 {
-    public interface IPardakhtCheckMoshtari : IHasGuid
+    public interface IPardakhtCheckMoshtari : IHasGuid, IHasModified
     {
         string Description { get; set; }
         Guid CheckGuid { get; set; }

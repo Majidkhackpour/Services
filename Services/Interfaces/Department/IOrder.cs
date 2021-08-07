@@ -8,7 +8,6 @@ namespace Servicess.Interfaces.Department
         Guid CustomerGuid { get; set; }
         Guid UserGuid { get; set; }
         string ContractCode { get; set; }
-        int LearningCount { get; set; }
         decimal Sum { get; set; }
         decimal Discount { get; set; }
         decimal Total { get; set; }

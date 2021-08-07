@@ -119,7 +119,7 @@ namespace WindowsSerivces.Pagging
                 if (token.IsCancellationRequested) return;
                 var proccessedPagedList = list?.ProgressPages(CurrentPage, PageIdx);
                 if (token.IsCancellationRequested) return;
-                TotalCount = proccessedPagedList.TotalPages;
+                TotalCount = proccessedPagedList?.TotalPages ?? 0;
                 if (PageIdx > TotalCount) PageIdx = TotalCount;
                 if (token.IsCancellationRequested) return;
                 await SetLabelAsync(token);

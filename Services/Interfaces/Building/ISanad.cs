@@ -3,7 +3,7 @@ using Servicess.Interfaces;
 
 namespace Services.Interfaces.Building
 {
-    public interface ISanad : IHasGuid
+    public interface ISanad : IHasGuid, IHasModified
     {
         DateTime DateM { get; set; }
         string Description { get; set; }

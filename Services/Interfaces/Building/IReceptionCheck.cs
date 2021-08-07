@@ -3,7 +3,7 @@ using Servicess.Interfaces;
 
 namespace Services.Interfaces.Building
 {
-    public interface IReceptionCheck : IHasGuid
+    public interface IReceptionCheck : IHasGuid, IHasModified
     {
         string BankName { get; set; }
         DateTime DateM { get; set; }

@@ -3,7 +3,7 @@ using Services.Access;
 
 namespace Servicess.Interfaces.Building
 {
-    public interface IUsers : IHasGuid
+    public interface IUsers : IHasGuid, IHasStatus, IHasModified
     {
         string Name { get; set; }
         string UserName { get; set; }

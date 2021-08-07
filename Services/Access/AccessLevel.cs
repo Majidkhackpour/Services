@@ -56,5 +56,19 @@
         public SendSmsAccess SendSms { get; set; } = new SendSmsAccess();
         [PersianNameAttribute.PersianName("سیمکارت ها")]
         public SimcardAccess Simcard { get; set; } = new SimcardAccess();
+        [PersianNameAttribute.PersianName("حساب های بانکی")]
+        public BankAccess Bank { get; set; } = new BankAccess();
+        [PersianNameAttribute.PersianName("چک دریافتی")]
+        public CheckMAccess CheckM { get; set; } = new CheckMAccess();
+        [PersianNameAttribute.PersianName("چک پرداختی")]
+        public CheckShAccess CheckSh { get; set; } = new CheckShAccess();
+        [PersianNameAttribute.PersianName("دسته چک ها")]
+        public DasteCheckAccess DasteCheck { get; set; } = new DasteCheckAccess();
+        [PersianNameAttribute.PersianName("حساب تفصیلی")]
+        public TafsilAccess Tafsil { get; set; } = new TafsilAccess();
+        [PersianNameAttribute.PersianName("صندوق ها")]
+        public SandouqAccess Sandouq { get; set; } = new SandouqAccess();
+        [PersianNameAttribute.PersianName("مشاوران")]
+        public AdvisorAccess Advisor { get; set; } = new AdvisorAccess();
     }
 }

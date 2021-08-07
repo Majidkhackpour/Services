@@ -11,6 +11,5 @@ namespace Services.Interfaces.Building
         EnBackUpStatus BackUpStatus { get; set; }
         string StatusDesc { get; set; }
         short Size { get; set; }
-
     }
 }

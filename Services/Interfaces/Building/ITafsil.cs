@@ -3,7 +3,7 @@ using Servicess.Interfaces;
 
 namespace Services.Interfaces.Building
 {
-    public interface ITafsil : IHasGuid
+    public interface ITafsil : IHasGuid, IHasStatus, IHasModified
     {
         string Name { get; set; }
         string Code { get; set; }

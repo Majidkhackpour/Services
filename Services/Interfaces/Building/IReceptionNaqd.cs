@@ -3,7 +3,7 @@ using Servicess.Interfaces;
 
 namespace Services.Interfaces.Building
 {
-    public interface IReceptionNaqd : IHasGuid
+    public interface IReceptionNaqd : IHasGuid, IHasModified
     {
         DateTime DateM { get; set; }
         Guid MasterGuid { get; set; }

@@ -19,7 +19,6 @@ namespace Services
         public static string Password;
         public static short MaxCountPerTime { get; set; }
         public static string HardSerial { get; set; }
-
         public static long AndroidIme { get; set; }
         private static bool inited = false;
 
@@ -30,7 +29,7 @@ namespace Services
         private static Task _retryThread = null;
 
         public static void AddHandler(string version,
-            ENSource source, string path,string hardSerial, string username = "accountingerrorlog",
+            ENSource source, string path, string hardSerial, string username = "accountingerrorlog",
             string password = "accountingerrorlog",
             int minutes = 10, int minSecendsBetweenExeptions = 30)
         {
@@ -55,7 +54,7 @@ namespace Services
             AppDomain.CurrentDomain.UnhandledException +=
                 new UnhandledExceptionEventHandler(WebErrorLog.ErrorInstence.UnhandledExceptionLog);
             Source = source;
-            TakeScreenShot = false; 
+            TakeScreenShot = false;
             Path = path;
             Version = version;
             Username = username;
@@ -108,6 +107,9 @@ namespace Services
                 e.Source = Source;
                 e.Version = Version;
                 e.Path = Path;
+                e.HardSerial = HardSerial;
+                if (AndroidIme > 0)
+                    e.AndroidIme = AndroidIme.ToString();
                 await SaveWebErrorLog(e);
             }
             catch (Exception ex)
@@ -144,7 +146,7 @@ namespace Services
         {
             try
             {
-                if (localSavePath?.Length < 1)  return;
+                if (localSavePath?.Length < 1) return;
                 if (!Directory.Exists(localSavePath))
                     Directory.CreateDirectory(localSavePath);
                 var filepath = System.IO.Path.Combine(localSavePath, webErrorLog.Guid + ".txt");
