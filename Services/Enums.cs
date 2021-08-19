@@ -340,7 +340,8 @@ namespace Services
         [PersianNameAttribute.PersianName("فروش")] Forush = 1,
         [PersianNameAttribute.PersianName("پیش فروش")] PishForush = 2,
         [PersianNameAttribute.PersianName("معاوضه")] Moavezeh = 3,
-        [PersianNameAttribute.PersianName("مشارکت در ساخت")] Mosharekat = 4
+        [PersianNameAttribute.PersianName("مشارکت در ساخت")] Mosharekat = 4,
+        [PersianNameAttribute.PersianName("None")] None = 100
     }
     public enum EnEconomyCodeStatus
     {
@@ -426,7 +427,8 @@ namespace Services
         [PersianNameAttribute.PersianName("None")] None = 0,
         [PersianNameAttribute.PersianName("دپارتمان")] Department = 1,
         [PersianNameAttribute.PersianName("املاک")] Building = 2,
-        [PersianNameAttribute.PersianName("Server")] Server = 3
+        [PersianNameAttribute.PersianName("Server")] Server = 3,
+        [PersianNameAttribute.PersianName("Scrapper")] Scrapper = 4
     }
     public enum ReturnedState : short
     {

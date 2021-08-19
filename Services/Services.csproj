@@ -193,6 +193,7 @@
     <Compile Include="Etentions.cs" />
     <Compile Include="Interfaces\Building\IWorkingRange.cs" />
     <Compile Include="Interfaces\Department\IBackUpLog.cs" />
+    <Compile Include="Interfaces\Department\IScrapper.cs" />
     <Compile Include="Interfaces\IErrorHandler.cs" />
     <Compile Include="Interfaces\Department\IAndroids.cs" />
     <Compile Include="Interfaces\Department\ICustomerLog.cs" />

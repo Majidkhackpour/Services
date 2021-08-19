@@ -5,7 +5,7 @@ using TMS.Class;
 
 namespace Services
 {
-    public class Calendar
+    public static class Calendar
     {
         public static DateTime ShamsiToMiladi(string DateParam)
         {
@@ -494,6 +494,40 @@ namespace Services
             }
 
             return res;
+        }
+        public static string GetTelegramDate(this DateTime? date)
+        {
+            try
+            {
+                if (date == null) return "";
+                var dis = DateTime.Now - date;
+                if (dis.Value.Days > 1) return $"{dis.Value.Days} روز پیش";
+                if (dis.Value.Hours > 1) return $"{dis.Value.Hours} ساعت پیش";
+                return $"{dis.Value.Minutes} دقیقه پیش";
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+            }
+
+            return "";
+        }
+        public static string GetTelegramDate(this DateTime date)
+        {
+            try
+            {
+                var dis = DateTime.Now - date;
+                if (dis.Days > 30) return "بیش از یکماه پیش";
+                if (dis.Days > 1) return $"{dis.Days} روز پیش";
+                if (dis.Hours > 1) return $"{dis.Hours} ساعت پیش";
+                return $"{dis.Minutes} دقیقه پیش";
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+            }
+
+            return "";
         }
     }
 }
