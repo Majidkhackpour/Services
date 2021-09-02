@@ -1,9 +1,11 @@
-﻿using Servicess.Interfaces;
+﻿using System;
+using Servicess.Interfaces;
 
 namespace Services.Interfaces.Department
 {
     public interface IScrapper : IHasGuid
     {
+        DateTime DateM { get; set; }
         string Title { get; set; }
         string Number { get; set; }
         string State { get; set; }
@@ -27,5 +29,6 @@ namespace Services.Interfaces.Department
         int VahedPerTabaqe { get; set; }
         string BuildingSide { get; set; }
         string ImagesList { get; set; }
+        AdvertiseType Type { get; set; }
     }
 }

@@ -52,7 +52,7 @@
             this.Font = new System.Drawing.Font("B Titr", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "CurrencyTextBox";
-            this.Size = new System.Drawing.Size(225, 32);
+            this.Size = new System.Drawing.Size(225, 29);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -217,6 +217,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertyComparer.cs" />
     <Compile Include="ReturnedSaveFuncInfo.cs" />
+    <Compile Include="ScrapperReportViewModel.cs" />
     <Compile Include="SendEmail.cs" />
     <Compile Include="SendErrorToTelegram.cs" />
     <Compile Include="Serializable.cs" />

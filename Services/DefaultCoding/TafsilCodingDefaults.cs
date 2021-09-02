@@ -126,5 +126,6 @@ namespace Services.DefaultCoding
         public Guid CLSTafsil9010207 => Guid.Parse("65d2d9e3-b870-4b94-8d9b-ffc0e9fc64ac");
         public Guid CLSTafsil9010209 => Guid.Parse("5976a72e-7058-4830-ab4a-636279599a31");
         public Guid CLSTafsil1030401 => Guid.Parse("69A7EAE4-9231-4031-BA33-9070BF2ECA3E");
+        public Guid DefualtCustomer => Guid.Parse("e49a6e74-beec-489f-a720-28bf246b8e2a");
     }
 }

@@ -52,6 +52,7 @@ namespace Servicess.Interfaces.Building
         float MetrazhKouche { get; set; }
         float ErtefaSaqf { get; set; }
         float Hashie { get; set; }
+        float Lenght { get; set; }
         string SaleSakht { get; set; }
         string DateParvane { get; set; }
         string ParvaneSerial { get; set; }

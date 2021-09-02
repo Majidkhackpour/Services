@@ -7,7 +7,7 @@ namespace Services
 {
     public static class txtSetter
     {
-        public static void Focus(TextBox txt,bool isDep=false)
+        public static void Focus(TextBox txt, bool isDep = false)
         {
             if (!isDep)
             {
@@ -17,7 +17,7 @@ namespace Services
             else txt.BackColor = Color.Silver;
             txt.ForeColor = Color.Black;
         }
-        public static void Focus(Label lbl,bool isDep=false)
+        public static void Focus(Label lbl, bool isDep = false)
         {
             if (isDep)
             {
@@ -72,8 +72,14 @@ namespace Services
             try
             {
                 var a = txt.Text;
+                a = a.Replace("-", "").Replace("*", "").Replace("/", "")
+                    .Replace("_", "").Replace("=", "").Replace(@"\", "")
+                    .Replace("|", "").Replace(")", "").Replace("(", "")
+                    .Replace("&", "").Replace("^", "").Replace("%", "")
+                    .Replace("$", "").Replace("#", "").Replace("@", "")
+                    .Replace("!", "").Replace("~", "").Replace(",", "");
                 a = a.Replace("+", "00");
-                if(a.Contains("."))
+                if (a.Contains("."))
                     a = a.Replace(".", "");
                 a = a.ParseToDecimal().ThreeSeparator();
                 txt.Text = a;
