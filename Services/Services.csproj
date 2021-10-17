@@ -124,6 +124,8 @@
     <Compile Include="DefaultCoding\MoeinCodingsDefaults.cs" />
     <Compile Include="DefaultCoding\ParentDefaults.cs" />
     <Compile Include="DefaultCoding\TafsilCodingDefaults.cs" />
+    <Compile Include="FilterObjects\BuildingFilter.cs" />
+    <Compile Include="FilterObjects\RequestMatchFilter.cs" />
     <Compile Include="Interfaces\Building\IAdvertiseLog.cs" />
     <Compile Include="Interfaces\Building\IAdvertiseRelatedRegion.cs" />
     <Compile Include="Interfaces\Building\IAdvisor.cs" />
@@ -137,6 +139,7 @@
     <Compile Include="Interfaces\Building\IBuildingGallery.cs" />
     <Compile Include="Interfaces\Building\IBuildingMedia.cs" />
     <Compile Include="Interfaces\Building\IBuildingOptions.cs" />
+    <Compile Include="Interfaces\Building\IBuildingRelatedNumber.cs" />
     <Compile Include="Interfaces\Building\IBuildingRelatedOptions.cs" />
     <Compile Include="Interfaces\Building\IBuildingRequest.cs" />
     <Compile Include="Interfaces\Building\IBuildingRequestRegion.cs" />
@@ -209,6 +212,7 @@
     <Compile Include="Interfaces\Department\IUsers.cs" />
     <Compile Include="Interfaces\ILogger.cs" />
     <Compile Include="Interfaces\ITelegramBuilding.cs" />
+    <Compile Include="Interfaces\IWhatsappBuilding.cs" />
     <Compile Include="InternalLogger.cs" />
     <Compile Include="Json.cs" />
     <Compile Include="Logger.cs" />
@@ -227,6 +231,7 @@
     <Compile Include="WebErrorLog.cs" />
     <Compile Include="WebPageContainer.cs" />
     <Compile Include="WebResponse.cs" />
+    <Compile Include="WebTelegramReporter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -11,7 +11,7 @@ namespace WindowsSerivces
         {
             var handler = OnTextChanged;
             if (handler != null)
-                OnTextChanged();
+                OnTextChanged?.Invoke();
         }
         public decimal TextDecimal 
         {

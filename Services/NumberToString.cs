@@ -50,6 +50,8 @@ namespace Services
                     if (b != 0)
                         stotal = stotal + Getnum3(b) + " " + basex[l - i] + " و ";
                 }
+
+                if (string.IsNullOrEmpty(stotal)) return "صفر";
                 stotal = stotal.Substring(0, stotal.Length - 3);
                 return stotal;
             }

@@ -18,7 +18,7 @@ namespace Services
             var res = new ReturnedSaveFuncInfo();
             try
             {
-                pinger = new Ping(); 
+                pinger = new Ping();
                 pinger.Send("www.google.com");
             }
             catch (PingException)
@@ -71,7 +71,7 @@ namespace Services
         }
         public static string GetIp() => AsyncContext.Run(GetNetworkIpAddress);
         public static string WebApi = "https://aarad.ir";
-        //public static string WebApi = "https://localhost:44358/";
+        //public static string WebApi = "https://localhost:44358";
         public static void NEVER_EAT_POISON_Disable_CertificateValidation()
         {
             ServicePointManager.ServerCertificateValidationCallback =
@@ -80,7 +80,8 @@ namespace Services
                     X509Certificate certificate,
                     X509Chain chain,
                     SslPolicyErrors sslPolicyErrors
-                ) {
+                )
+                {
                     return true;
                 };
         }

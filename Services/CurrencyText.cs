@@ -73,22 +73,22 @@ namespace Services
                 return "";
             }
         }
-        public static string RemoveNoNumbers(this string Input, string Replcment)
+        public static string RemoveNoNumbers(this string input, string replcment = "")
         {
             try
             {
                 var ret = "";
-                Input = FixString(Input);
-                if (string.IsNullOrEmpty(Input)) return "";
-                Input = Input.Replace("\r", Replcment);
-                Input = Input.Replace("\n", Replcment);
-                Input = Input.Replace("\t", Replcment);
+                input = FixString(input);
+                if (string.IsNullOrEmpty(input)) return "";
+                input = input.Replace("\r", replcment);
+                input = input.Replace("\n", replcment);
+                input = input.Replace("\t", replcment);
 
-                foreach (var item in Input.ToCharArray())
+                foreach (var item in input.ToCharArray())
                     if ("0123456789".Contains(item.ToString()))
                         ret += item.ToString();
                     else
-                        ret += Replcment;
+                        ret += replcment;
                 return ret;
             }
             catch (Exception ex)

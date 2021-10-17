@@ -343,6 +343,27 @@ namespace Services
         [PersianNameAttribute.PersianName("مشارکت در ساخت")] Mosharekat = 4,
         [PersianNameAttribute.PersianName("None")] None = 100
     }
+    public enum EnContractType : short
+    {
+        [PersianNameAttribute.PersianName("فروش")] Forush = 1,
+        [PersianNameAttribute.PersianName("رهن و اجاره")] RahnEjare = 2,
+        [PersianNameAttribute.PersianName("رهن کامل")] FullRahn = 3,
+        [PersianNameAttribute.PersianName("پیش فروش")] PishForush = 4,
+        [PersianNameAttribute.PersianName("معاوضه")] Moavezeh = 5,
+        [PersianNameAttribute.PersianName("مشارکت در ساخت")] Mosharekat = 6,
+        [PersianNameAttribute.PersianName("None")] None = 100
+    }
+    public enum EnContractType_ : short
+    {
+        [PersianNameAttribute.PersianName("آپارتمان")] Appartment = 1,
+        [PersianNameAttribute.PersianName("ویلایی")] Home = 2,
+        [PersianNameAttribute.PersianName("زمین")] Land = 3,
+        [PersianNameAttribute.PersianName("ویلا")] Villa = 4,
+        [PersianNameAttribute.PersianName("مغازه و تجاری")] Store = 5,
+        [PersianNameAttribute.PersianName("دفترکار اداری")] Office = 6,
+        [PersianNameAttribute.PersianName("باغ")] Garden = 7,
+        [PersianNameAttribute.PersianName("کلنگی")] OldHouse = 8
+    }
     public enum EnEconomyCodeStatus
     {
         [PersianNameAttribute.PersianName("نام کاربری دارم")] HasUserName = 0,
@@ -379,7 +400,8 @@ namespace Services
     {
         [PersianNameAttribute.PersianName("مستقل")] Mostaqel = 0,
         [PersianNameAttribute.PersianName("مشترک")] Moshtarek = 1,
-        [PersianNameAttribute.PersianName("ندارد")] Nadarad = 2
+        [PersianNameAttribute.PersianName("ندارد")] Nadarad = 2,
+        [PersianNameAttribute.PersianName("تعیین نشده")] None = 3
     }
     public enum EnPhoneBookGroup : short
     {
@@ -447,9 +469,21 @@ namespace Services
         [PersianNameAttribute.PersianName("دیوار")] Divar = 0,
         [PersianNameAttribute.PersianName("شیپور")] Sheypoor = 1,
         [PersianNameAttribute.PersianName("چت دیوار")] DivarChat = 2,
-        [PersianNameAttribute.PersianName("هردو")] Both = 3
+        [PersianNameAttribute.PersianName("هردو")] Both = 3,
+        [PersianNameAttribute.PersianName("None")] None = 100,
     }
-
+    public enum EnVillaType : short
+    {
+        [PersianNameAttribute.PersianName("ساحلی")] Beatch = 1,
+        [PersianNameAttribute.PersianName("جنگلی")] Forest = 2,
+        [PersianNameAttribute.PersianName("شهرکی")] City = 3
+    }
+    public enum EnCommericallLicense : short
+    {
+        [PersianNameAttribute.PersianName("ندارد")] HasNot = 1,
+        [PersianNameAttribute.PersianName("دائمی")] Permament = 2,
+        [PersianNameAttribute.PersianName("موقت")] Temporary = 3
+    }
     public enum EnNoteStatus : short
     {
         [PersianNameAttribute.PersianName("همه")] All = 0,
@@ -457,7 +491,46 @@ namespace Services
         [PersianNameAttribute.PersianName("خوانده شده")] Read = 2,
         [PersianNameAttribute.PersianName("حذف شده")] Deleted = 3
     }
-
+    public enum EnConstructionStage : short
+    {
+        [PersianNameAttribute.PersianName("نصبیات")] Nasbiat = 1,
+        [PersianNameAttribute.PersianName("نازک کاری")] NazokKari = 2,
+        [PersianNameAttribute.PersianName("سفت کاری")] SeftKari = 3,
+        [PersianNameAttribute.PersianName("اسکلت")] Eskelet = 4,
+        [PersianNameAttribute.PersianName("فونداسیون")] Fundation = 5,
+        [PersianNameAttribute.PersianName("خاک برداری")] KhakBardari = 6,
+        [PersianNameAttribute.PersianName("تخریب")] Takhrib = 7
+    }
+    public enum EnBuildingParent : short
+    {
+        [PersianNameAttribute.PersianName("None")] None = 0,
+        [PersianNameAttribute.PersianName("فروش آپارتمان")] SellAprtment = 101,
+        [PersianNameAttribute.PersianName("فروش ویلایی")] SellHome = 102,
+        [PersianNameAttribute.PersianName("فروش زمین")] SellLand = 103,
+        [PersianNameAttribute.PersianName("فروش ویلا")] SellVilla = 104,
+        [PersianNameAttribute.PersianName("فروش واحد تجاری")] SellStore = 105,
+        [PersianNameAttribute.PersianName("فروش واحد اداری")] SellOffice = 106,
+        [PersianNameAttribute.PersianName("فروش باغ")] SellGarden = 107,
+        [PersianNameAttribute.PersianName("فروش کلنگی")] SellOldHouse = 108,
+        [PersianNameAttribute.PersianName("رهن و اجاره آپارتمان")] RentAprtment = 109,
+        [PersianNameAttribute.PersianName("رهن و اجاره ویلایی")] RentHome = 110,
+        [PersianNameAttribute.PersianName("رهن و اجاره واحد تجاری")] RentStore = 111,
+        [PersianNameAttribute.PersianName("رهن و اجاره واحد اداری")] RentOffice = 112,
+        [PersianNameAttribute.PersianName("رهن کامل آپارتمان")] FullRentAprtment = 113,
+        [PersianNameAttribute.PersianName("رهن کامل ویلایی")] FullRentHome = 114,
+        [PersianNameAttribute.PersianName("رهن کامل واحد تجاری")] FullRentStore = 115,
+        [PersianNameAttribute.PersianName("رهن کامل واحد اداری")] FullRentOffice = 116,
+        [PersianNameAttribute.PersianName("پیش فروش آپارتمان")] PreSellAprtment = 117,
+        [PersianNameAttribute.PersianName("پیش فروش ویلایی")] PreSellHome = 118,
+        [PersianNameAttribute.PersianName("پیش فروش واحد تجاری")] PreSellStore = 119,
+        [PersianNameAttribute.PersianName("پیش فروش واحد اداری")] PreSellOffice = 120,
+        [PersianNameAttribute.PersianName("معاوضه آپارتمان")] MoavezeAprtment = 121,
+        [PersianNameAttribute.PersianName("معاوضه ویلایی")] MoavezeHome = 122,
+        [PersianNameAttribute.PersianName("معاوضه واحد تجاری")] MoavezeStore = 123,
+        [PersianNameAttribute.PersianName("معاوضه واحد اداری")] MoavezeOffice = 124,
+        [PersianNameAttribute.PersianName("مشارکت در ساخت آپارتمان")] MosharekatAprtment = 125,
+        [PersianNameAttribute.PersianName("مشارکت در ساخت ویلایی")] MosharekatHome = 126
+    }
     public enum EnNotePriority : short
     {
         [PersianNameAttribute.PersianName("همه")] All = 0,
@@ -525,7 +598,6 @@ namespace Services
                      QueryStatus | EnumerateDependants | Start | Stop | PauseContinue |
                      Interrogate | UserDefinedControl)
     }
-
     public enum ServiceBootFlag
     {
         Start = 0x00000000,
@@ -534,7 +606,6 @@ namespace Services
         DemandStart = 0x00000003,
         Disabled = 0x00000004
     }
-
     public enum ServiceControl
     {
         Stop = 0x00000001,
@@ -548,7 +619,6 @@ namespace Services
         NetBindEnable = 0x00000009,
         NetBindDisable = 0x0000000A
     }
-
     public enum ServiceError
     {
         Ignore = 0x00000000,
@@ -609,7 +679,6 @@ namespace Services
         Sms = 0,
         Call = 1,
     }
-
     public enum AccessPart : int
     {
         Peoples = 10,
@@ -641,7 +710,6 @@ namespace Services
         Simcards = 36,
         Reports = 37
     }
-
     public enum State : int
     {
         People_Insert = 1001,
@@ -839,7 +907,6 @@ namespace Services
         Reports_Export_People_Excel = 3702,
 
     }
-
     public enum StiType : short
     {
         Building_One = 0,

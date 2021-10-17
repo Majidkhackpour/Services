@@ -30,5 +30,9 @@ namespace Services.Interfaces.Department
         string BuildingSide { get; set; }
         string ImagesList { get; set; }
         AdvertiseType Type { get; set; }
+        string FloorCover { get; set; } 
+        string Colling { get; set; } 
+        string Hitting { get; set; } 
+        EnBuildingParent Parent { get; set; }
     }
 }

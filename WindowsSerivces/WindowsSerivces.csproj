@@ -119,6 +119,12 @@
     <Compile Include="CurrencyTextBox.Designer.cs">
       <DependentUpon>CurrencyTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="UcButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcButton.Designer.cs">
+      <DependentUpon>UcButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_Header.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pagging\UC_FooterPaging.resx">
       <DependentUpon>UC_FooterPaging.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcButton.resx">
+      <DependentUpon>UcButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Header.resx">
       <DependentUpon>UC_Header.cs</DependentUpon>

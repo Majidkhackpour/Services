@@ -167,7 +167,7 @@ namespace WindowsSerivces.Pagging
                     if (maxDelay <= 0) return;
                 }
                 if (IsDisposed || token.IsCancellationRequested) return;
-                Invoke(new Action(() =>
+                BeginInvoke(new Action(() =>
                 {
                     try
                     {
