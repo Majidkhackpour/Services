@@ -178,7 +178,8 @@ namespace Services
         Moein = 29,
         Tafsil = 30,
         Sanad = 31,
-        SanadDetail = 32
+        SanadDetail = 32,
+        BuildingNote = 33
     }
     public enum ResponseStatus
     {

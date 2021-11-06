@@ -19,7 +19,7 @@ namespace Services
             try
             {
                 pinger = new Ping();
-                pinger.Send("www.google.com");
+                await pinger.SendPingAsync("www.google.com");
             }
             catch (PingException)
             {
@@ -49,10 +49,7 @@ namespace Services
 
                 return publicIpAddress.Replace("\n", "");
             }
-            catch (Exception ex)
-            {
-                return null;
-            }
+            catch { return null; }
         }
         public static async Task<string> GetNetworkIpAddress()
         {

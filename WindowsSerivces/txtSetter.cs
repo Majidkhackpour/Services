@@ -32,24 +32,18 @@ namespace Services
             txt.BackColor = Color.White;
             txt.ForeColor = Color.Black;
         }
-        public static void Follow(Label lbl)
-        {
-            lbl.ForeColor = Color.Black;
-        }
-
+        public static void Follow(Label lbl) => lbl.ForeColor = Color.Black;
         public static void FocusMsk(MaskedTextBox txt)
         {
             txt.BackColor = Color.White;
             txt.ForeColor = Color.Black;
         }
-
         public static void FollowMsk(MaskedTextBox txt)
         {
             var colour = ColorTranslator.FromHtml("#17212b");
             txt.BackColor = colour;
             txt.ForeColor = Color.White;
         }
-
         public static void KeyPress_Whit_Dot(object sender, KeyPressEventArgs e)
         {
             if (Convert.ToInt32(e.KeyChar) <= 57 & Convert.ToInt32(e.KeyChar) >= 45 || Convert.ToInt32(e.KeyChar) <= 1785 & Convert.ToInt32(e.KeyChar) >= 1776 || Convert.ToInt32(e.KeyChar) == 8)
@@ -66,7 +60,6 @@ namespace Services
             else
                 e.KeyChar = Convert.ToChar(Keys.None);
         }
-
         public static void Three_Ziro(TextBox txt)
         {
             try

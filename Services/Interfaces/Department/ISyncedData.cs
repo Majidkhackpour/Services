@@ -6,7 +6,7 @@ namespace Services.Interfaces.Department
     public interface ISyncedData : IHasGuid
     {
         Guid ObjectGuid { get; set; }
-        string HardSerial { get; set; }
+        Guid CustomerGuid { get; set; }
         EnTemp Type { get; set; }
     }
 }

@@ -13,10 +13,15 @@ namespace Services.AndroidViewModels
         public string PishTotalPrice { get; set; }
         public string Address { get; set; }
         public string Metrazh { get; set; }
+        public string ZirBana { get; set; }
         public string RoomCount { get; set; }
         public string TabaqeCount { get; set; }
         public string SaleSakht { get; set; }
         public string Date { get; set; }
+        public DateTime CreateDate { get; set; }
         public string Type { get; set; }
+        public string OwnerName { get; set; }
+        public string OwnerTell { get; set; }
+        public string OwnerAddress { get; set; }
     }
 }

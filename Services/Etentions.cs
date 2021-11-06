@@ -31,7 +31,7 @@ namespace Services
 
                 return EnumItem.ToString();
             }
-            catch (Exception ex)
+            catch
             {
                 return EnumItem.ToString();
             }
@@ -835,14 +835,15 @@ namespace Services
             }
             return result;
         }
-        public static async Task<WebResponse<T>> PostToApi<T, U>(U item, string url) where U : new()
+        public static async Task<WebResponse<T>> PostToApi<T, U>(U item, string url, Guid? cusGuid = null) where U : new()
         {
             try
             {
-                JsonSerializerSettings jsonSerializerSettings = null;
                 using (var clientHttp = new HttpClient())
                 {
                     clientHttp.Timeout = new TimeSpan(0, 2, 15);
+                    if (cusGuid != null && cusGuid != Guid.Empty)
+                        clientHttp.DefaultRequestHeaders.Add("cusGuid", cusGuid.Value.ToString());
                     var temp = new StringContent(JsonConvert.SerializeObject(item), Encoding.UTF8, "application/json");
                     var response = await clientHttp.PostAsync(url, temp);
                     if (!response.IsSuccessStatusCode)

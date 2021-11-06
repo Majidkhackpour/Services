@@ -138,6 +138,7 @@
     <Compile Include="Interfaces\Building\IBuildingCondition.cs" />
     <Compile Include="Interfaces\Building\IBuildingGallery.cs" />
     <Compile Include="Interfaces\Building\IBuildingMedia.cs" />
+    <Compile Include="Interfaces\Building\IBuildingNote.cs" />
     <Compile Include="Interfaces\Building\IBuildingOptions.cs" />
     <Compile Include="Interfaces\Building\IBuildingRelatedNumber.cs" />
     <Compile Include="Interfaces\Building\IBuildingRelatedOptions.cs" />
@@ -215,6 +216,7 @@
     <Compile Include="Interfaces\IWhatsappBuilding.cs" />
     <Compile Include="InternalLogger.cs" />
     <Compile Include="Json.cs" />
+    <Compile Include="LkSerial\GenerateActivationCodeServer.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="NumberToString.cs" />
     <Compile Include="PersianNameAttribute.cs" />
