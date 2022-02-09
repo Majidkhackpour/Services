@@ -10,5 +10,6 @@ namespace Servicess.Interfaces.Building
         EnLogAction Action { get; set; }
         EnLogPart Part { get; set; }
         string Description { get; set; }
+        Guid? BuildingGuid { get; set; }
     }
 }

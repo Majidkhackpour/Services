@@ -13,14 +13,20 @@ namespace WindowsSerivces
             if (handler != null)
                 OnTextChanged?.Invoke();
         }
-        public decimal TextDecimal 
+        public decimal TextDecimal
         {
             get
             {
                 var de = txtNumber.Text.Replace(".", "");
                 return de.ParseToDecimal();
             }
-            set => txtNumber.Text = value.ToString().Replace(".00", "");
+            set
+            {
+                var d = value.ToString();
+                if (d.EndsWith(".00")) d = d.Replace(".00", "");
+                if (d.EndsWith(".0")) d = d.Replace(".0", "");
+                txtNumber.Text = d;
+            }
         }
 
         public CurrencyTextBox() => InitializeComponent();

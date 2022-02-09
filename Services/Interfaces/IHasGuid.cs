@@ -14,7 +14,5 @@ namespace Servicess.Interfaces
     public interface IHasModified
     {
         DateTime Modified { get; set; }
-        ServerStatus ServerStatus { get; set; }
-        DateTime ServerDeliveryDate { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using Services;
 
 namespace Servicess.Interfaces.Building
 {
@@ -12,6 +13,8 @@ namespace Servicess.Interfaces.Building
         string PlaceBirth { get; set; }
         string DateBirth { get; set; }
         string Address { get; set; }
+        ServerStatus ServerStatus { get; set; }
+        DateTime ServerDeliveryDate { get; set; }
         string IssuedFrom { get; set; }
         string PostalCode { get; set; }
         Guid GroupGuid { get; set; }

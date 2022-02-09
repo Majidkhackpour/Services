@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Services
 {
@@ -180,12 +181,32 @@ namespace Services
             }
         }
 
+        public ReturnedSaveFuncInfo AddReturnedValue(ReturnedSaveFuncInfo[] returnedSaveFuncInfo)
+        {
+            var res = new ReturnedSaveFuncInfo();
+            try
+            {
+                var ret = returnedSaveFuncInfo?.ToList();
+                if (ret == null || ret.Count() <= 0) return res;
+                foreach (var info in ret)
+                    res.AddReturnedValue(info);
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+                res.AddReturnedValue(ex);
+            }
+
+            return res;
+        }
         public ReturnedSaveFuncInfo AddReturnedValue(ReturnedSaveFuncInfo returnedSaveFuncInfo)
         {
             try
             {
                 if (returnedSaveFuncInfo?.ErrorList?.Count > 0)
                     ErrorList.AddRange(returnedSaveFuncInfo.ErrorList);
+                if (returnedSaveFuncInfo?.WarningList?.Count > 0)
+                    WarningList.AddRange(returnedSaveFuncInfo.WarningList);
                 if (returnedSaveFuncInfo?.InformationList?.Count > 0)
                     InformationList.AddRange(returnedSaveFuncInfo.InformationList);
             }

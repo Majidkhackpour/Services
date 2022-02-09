@@ -48,6 +48,7 @@ namespace Servicess.Interfaces.Building
         int TedadTabaqe { get; set; }
         int TabaqeNo { get; set; }
         int VahedPerTabaqe { get; set; }
+        int VahedNo { get; set; }
         float MetrazhKouche { get; set; }
         float ErtefaSaqf { get; set; }
         float Hashie { get; set; }
@@ -64,10 +65,6 @@ namespace Servicess.Interfaces.Building
         EnBuildingPriority Priority { get; set; }
         bool IsArchive { get; set; }
         string Image { get; set; }
-        int TelegramCount { get; set; }
-        int WhatsAppCount { get; set; }
-        int DivarCount { get; set; }
-        int SheypoorCount { get; set; }
         AdvertiseType? AdvertiseType { get; set; }
         string DivarTitle { get; set; }
         string Hiting { get; set; }
@@ -79,5 +76,9 @@ namespace Servicess.Interfaces.Building
         int TreeCount { get; set; }
         EnConstructionStage? ConstructionStage { get; set; }
         EnBuildingParent? Parent { get; set; }
+        ServerStatus ServerStatus { get; set; }
+        DateTime ServerDeliveryDate { get; set; }
+        Guid? ZoncanGuid { get; set; }
+        Guid? WindowGuid { get; set; }
     }
 }

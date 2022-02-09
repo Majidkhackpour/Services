@@ -32,5 +32,6 @@ namespace Services.FilterObjects
         public decimal EjarePrice1 { get; set; } = 0;
         public decimal EjarePrice2 { get; set; } = 0;
         public int MaxTabaqeNo { get; set; } = 0;
+        public EnBuildingPriority? Priority { get; set; } = null;
     }
 }

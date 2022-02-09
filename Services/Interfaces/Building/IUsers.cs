@@ -1,4 +1,5 @@
-﻿using Services;
+﻿using System;
+using Services;
 using Services.Access;
 
 namespace Servicess.Interfaces.Building
@@ -13,5 +14,7 @@ namespace Servicess.Interfaces.Building
         string AnswerQuestion { get; set; }
         string Email { get; set; }
         string Mobile { get; set; }
+        ServerStatus ServerStatus { get; set; }
+        DateTime ServerDeliveryDate { get; set; }
     }
 }

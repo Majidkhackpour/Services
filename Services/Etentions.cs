@@ -18,22 +18,22 @@ namespace Services
 {
     public static class Extentions
     {
-        public static string GetDisplay<T>(this T EnumItem)
+        public static string GetDisplay<T>(this T enumItem)
         {
             try
             {
                 if (typeof(T).IsEnum)
                 {
                     return ((PersianNameAttribute.PersianName)typeof(T).GetFields()
-                        .Single(rec => rec.Name == Enum.GetName(typeof(T), EnumItem)).GetCustomAttributes(false)
+                        .Single(rec => rec.Name == Enum.GetName(typeof(T), enumItem)).GetCustomAttributes(false)
                         .First(rec => rec is PersianNameAttribute.PersianName)).Text;
                 }
 
-                return EnumItem.ToString();
+                return enumItem.ToString();
             }
             catch
             {
-                return EnumItem.ToString();
+                return enumItem.ToString();
             }
         }
         public static bool ParseToBoolean(this string Input, bool def = false)
@@ -70,12 +70,10 @@ namespace Services
         }
         public static decimal ParseToDecimal(this string value, decimal def = 0)
         {
-            value = value.Trim();
             if (string.IsNullOrEmpty(value))
                 return def;
-
-            decimal ret;
-            return decimal.TryParse(value, out ret) ? ret : def;
+            value = value.Replace(".", "").Replace("/", "").Trim();
+            return decimal.TryParse(value, out var ret) ? ret : def;
         }
         public static double ParseToDouble(this string value, double def = 0)
         {

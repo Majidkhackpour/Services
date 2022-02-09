@@ -65,13 +65,15 @@ namespace Services
             try
             {
                 var a = txt.Text;
-                a = a.Replace("-", "").Replace("*", "").Replace("/", "")
+                a = a.Replace("/", "")
                     .Replace("_", "").Replace("=", "").Replace(@"\", "")
                     .Replace("|", "").Replace(")", "").Replace("(", "")
                     .Replace("&", "").Replace("^", "").Replace("%", "")
                     .Replace("$", "").Replace("#", "").Replace("@", "")
                     .Replace("!", "").Replace("~", "").Replace(",", "");
                 a = a.Replace("+", "00");
+                a = a.Replace("*", "000000");
+                a = a.Replace("-", "000");
                 if (a.Contains("."))
                     a = a.Replace(".", "");
                 a = a.ParseToDecimal().ThreeSeparator();

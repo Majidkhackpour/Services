@@ -270,7 +270,7 @@ namespace Services
                     ex = ex.InnerException;
                 }
 
-                errorLog.Ip = Utilities.GetIp() ?? "";
+                errorLog.Ip = Utilities.GetNetworkIpAddress() ?? "";
                 Logger.LoggerInstance.SaveLog(errorLog.ToString(), EnGroup.Exception);
                 Task.Run(() => ErrorHandler.OnExceptionHandle(errorLog));
             }

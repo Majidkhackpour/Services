@@ -125,6 +125,7 @@
     <Compile Include="DefaultCoding\ParentDefaults.cs" />
     <Compile Include="DefaultCoding\TafsilCodingDefaults.cs" />
     <Compile Include="FilterObjects\BuildingFilter.cs" />
+    <Compile Include="FilterObjects\ContractFilter.cs" />
     <Compile Include="FilterObjects\RequestMatchFilter.cs" />
     <Compile Include="Interfaces\Building\IAdvertiseLog.cs" />
     <Compile Include="Interfaces\Building\IAdvertiseRelatedRegion.cs" />
@@ -144,8 +145,11 @@
     <Compile Include="Interfaces\Building\IBuildingRelatedOptions.cs" />
     <Compile Include="Interfaces\Building\IBuildingRequest.cs" />
     <Compile Include="Interfaces\Building\IBuildingRequestRegion.cs" />
+    <Compile Include="Interfaces\Building\IBuildingReview.cs" />
     <Compile Include="Interfaces\Building\IBuildingType.cs" />
     <Compile Include="Interfaces\Building\IBuildingView.cs" />
+    <Compile Include="Interfaces\Building\IBuildingWindow.cs" />
+    <Compile Include="Interfaces\Building\IBuildingZoncan.cs" />
     <Compile Include="Interfaces\Building\ICalendar.cs" />
     <Compile Include="Interfaces\Building\ICheckPage.cs" />
     <Compile Include="Interfaces\Building\ICities.cs" />
@@ -186,7 +190,6 @@
     <Compile Include="Interfaces\Building\ISmsPanels.cs" />
     <Compile Include="Interfaces\Building\IStates.cs" />
     <Compile Include="Interfaces\Building\ITafsil.cs" />
-    <Compile Include="Interfaces\Building\ITemp.cs" />
     <Compile Include="Interfaces\Building\IUserLog.cs" />
     <Compile Include="Interfaces\Building\IUsers.cs" />
     <Compile Include="Calendar.cs" />
@@ -227,6 +230,16 @@
     <Compile Include="SendEmail.cs" />
     <Compile Include="SendErrorToTelegram.cs" />
     <Compile Include="Serializable.cs" />
+    <Compile Include="Settings\AdvertiseSetting.cs" />
+    <Compile Include="Settings\GlobalSetting.cs" />
+    <Compile Include="Settings\GlobalSettings\BackUpSettings.cs" />
+    <Compile Include="Settings\GlobalSettings\CompanyInfo.cs" />
+    <Compile Include="Settings\GlobalSettings\Global.cs" />
+    <Compile Include="Settings\GlobalSettings\PrintSetting.cs" />
+    <Compile Include="Settings\GlobalSettings\SafeBoxSettings.cs" />
+    <Compile Include="Settings\GlobalSettings\SmsSettings.cs" />
+    <Compile Include="Settings\GlobalSettings\TelegramSettings.cs" />
+    <Compile Include="Settings\GlobalSettings\WhatsappSettings.cs" />
     <Compile Include="SortableBindingList.cs" />
     <Compile Include="Utilities.cs" />
     <Compile Include="VersionAccess.cs" />

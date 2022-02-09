@@ -1,4 +1,5 @@
 ﻿using System;
+using Services;
 
 namespace Servicess.Interfaces.Building
 {
@@ -26,5 +27,7 @@ namespace Servicess.Interfaces.Building
         Guid BuildingAccountTypeGuid { get; set; }
         Guid BuildingConditionGuid { get; set; }
         string ShortDesc { get; set; }
+        ServerStatus ServerStatus { get; set; }
+        DateTime ServerDeliveryDate { get; set; }
     }
 }

@@ -6,7 +6,6 @@ using System.Net.Security;
 using System.Net.Sockets;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
-using Nito.AsyncEx;
 
 namespace Services
 {
@@ -32,7 +31,7 @@ namespace Services
 
             return res;
         }
-        public static async Task<string> GetLocalIpAddress()
+        public static string GetLocalIpAddress()
         {
             try
             {
@@ -51,7 +50,7 @@ namespace Services
             }
             catch { return null; }
         }
-        public static async Task<string> GetNetworkIpAddress()
+        public static string GetNetworkIpAddress()
         {
             try
             {
@@ -66,7 +65,7 @@ namespace Services
                 return null;
             }
         }
-        public static string GetIp() => AsyncContext.Run(GetNetworkIpAddress);
+        //public static string GetIp() => AsyncContext.Run(GetNetworkIpAddress);
         public static string WebApi = "https://aarad.ir";
         //public static string WebApi = "https://localhost:44358";
         public static void NEVER_EAT_POISON_Disable_CertificateValidation()

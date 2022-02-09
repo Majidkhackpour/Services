@@ -1,4 +1,5 @@
 ﻿using System;
+using Services;
 
 namespace Servicess.Interfaces.Building
 {
@@ -6,5 +7,7 @@ namespace Servicess.Interfaces.Building
     {
         string Name { get; set; }
         Guid StateGuid { get; set; }
+        ServerStatus ServerStatus { get; set; }
+        DateTime ServerDeliveryDate { get; set; }
     }
 }
