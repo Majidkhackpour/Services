@@ -185,7 +185,10 @@ namespace Services
         Tafsil = 30,
         Sanad = 31,
         SanadDetail = 32,
-        BuildingNote = 33
+        BuildingNote = 33,
+        BuildingWindow = 34,
+        BuildingZoncan = 35,
+        BuildingReview = 36
     }
     public enum ResponseStatus
     {
