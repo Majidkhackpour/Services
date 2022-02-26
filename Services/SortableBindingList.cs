@@ -6,73 +6,97 @@ namespace Services
 {
     public class SortableBindingList<T> : BindingList<T>
     {
-        private readonly Dictionary<Type, PropertyComparer<T>> _comparers;
-        private bool _isSorted;
-        private ListSortDirection _listSortDirection;
-        private PropertyDescriptor _propertyDescriptor;
+        private readonly Dictionary<Type, PropertyComparer<T>> comparers;
+        private bool isSorted;
+        private ListSortDirection listSortDirection;
+        private PropertyDescriptor propertyDescriptor;
 
-        public SortableBindingList()
-            : base(new List<T>())
+        public SortableBindingList() : base(new List<T>())
         {
-            _comparers = new Dictionary<Type, PropertyComparer<T>>();
+            try
+            {
+                comparers = new Dictionary<Type, PropertyComparer<T>>();
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+            }
         }
-
-        public SortableBindingList(IEnumerable<T> enumeration)
-            : base(new List<T>(enumeration))
+        public SortableBindingList(IEnumerable<T> enumeration) : base(new List<T>(enumeration))
         {
-            _comparers = new Dictionary<Type, PropertyComparer<T>>();
+            try
+            {
+                this.comparers = new Dictionary<Type, PropertyComparer<T>>();
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+            }
         }
 
         protected override bool SupportsSortingCore => true;
-
-        protected override bool IsSortedCore => _isSorted;
-
-        protected override PropertyDescriptor SortPropertyCore => _propertyDescriptor;
-
-        protected override ListSortDirection SortDirectionCore => _listSortDirection;
-
+        protected override bool IsSortedCore => isSorted;
+        protected override PropertyDescriptor SortPropertyCore => this.propertyDescriptor;
+        protected override ListSortDirection SortDirectionCore => this.listSortDirection;
         protected override bool SupportsSearchingCore => true;
 
         protected override void ApplySortCore(PropertyDescriptor property, ListSortDirection direction)
         {
-            var itemsList = (List<T>)Items;
-
-            var propertyType = property.PropertyType;
-            PropertyComparer<T> comparer;
-            if (!_comparers.TryGetValue(propertyType, out comparer))
+            try
             {
-                comparer = new PropertyComparer<T>(property, direction);
-                _comparers.Add(propertyType, comparer);
+                var itemsList = (List<T>)Items;
+
+                var propertyType = property.PropertyType;
+                PropertyComparer<T> comparer;
+                if (!comparers.TryGetValue(propertyType, out comparer))
+                {
+                    comparer = new PropertyComparer<T>(property, direction);
+                    comparers.Add(propertyType, comparer);
+                }
+
+                comparer.SetPropertyAndDirection(property, direction);
+                itemsList.Sort(comparer);
+
+                propertyDescriptor = property;
+                listSortDirection = direction;
+                isSorted = true;
+
+                OnListChanged(new ListChangedEventArgs(ListChangedType.Reset, -1));
             }
-
-            comparer.SetPropertyAndDirection(property, direction);
-            itemsList.Sort(comparer);
-
-            _propertyDescriptor = property;
-            _listSortDirection = direction;
-            _isSorted = true;
-
-            OnListChanged(new ListChangedEventArgs(ListChangedType.Reset, -1));
+            catch (Exception ex) { WebErrorLog.ErrorInstence.StartErrorLog(ex); }
         }
-
         protected override void RemoveSortCore()
         {
-            _isSorted = false;
-            _propertyDescriptor = base.SortPropertyCore;
-            _listSortDirection = base.SortDirectionCore;
+            try
+            {
+                isSorted = false;
+                propertyDescriptor = base.SortPropertyCore;
+                listSortDirection = base.SortDirectionCore;
 
-            OnListChanged(new ListChangedEventArgs(ListChangedType.Reset, -1));
+                OnListChanged(new ListChangedEventArgs(ListChangedType.Reset, -1));
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+            }
         }
-
         protected override int FindCore(PropertyDescriptor property, object key)
         {
             var count = Count;
-            for (var i = 0; i < count; ++i)
+            try
             {
-                T element = this[i];
-                if (property.GetValue(element).Equals(key)) return i;
+                for (var i = 0; i < count; ++i)
+                {
+                    T element = this[i];
+                    if (property.GetValue(element).Equals(key)) return i;
+                }
+                return -1;
             }
-            return -1;
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+                return -1;
+            }
         }
     }
 }

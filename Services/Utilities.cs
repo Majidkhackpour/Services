@@ -65,7 +65,6 @@ namespace Services
                 return null;
             }
         }
-        //public static string GetIp() => AsyncContext.Run(GetNetworkIpAddress);
         public static string WebApi = "https://aarad.ir";
         //public static string WebApi = "https://localhost:44358";
         public static void NEVER_EAT_POISON_Disable_CertificateValidation()

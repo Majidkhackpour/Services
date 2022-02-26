@@ -6,7 +6,7 @@ namespace WindowsSerivces
 {
     public partial class CurrencyTextBox : UserControl
     {
-        public event Action OnTextChanged;
+        public new event Action OnTextChanged;
         private void RaiseEvent()
         {
             var handler = OnTextChanged;

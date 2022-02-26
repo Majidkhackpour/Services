@@ -6,7 +6,7 @@ namespace Services.FilterObjects
     public class BuildingFilter
     {
         public bool? IsArchive { get; set; } = null;
-        public bool Status { get; set; } = false;
+        public bool? Status { get; set; } = null;
         public Guid? BuildingTypeGuid { get; set; } = null;
         public Guid? UserGuid { get; set; } = null;
         public Guid? DocumentTypeGuid { get; set; } = null;
@@ -33,5 +33,10 @@ namespace Services.FilterObjects
         public decimal EjarePrice2 { get; set; } = 0;
         public int MaxTabaqeNo { get; set; } = 0;
         public EnBuildingPriority? Priority { get; set; } = null;
+        public Guid? ZoncanGuid { get; set; } = null;
+        public DateTime? CreateDate1 { get; set; } = null;
+        public DateTime? CreateDate2 { get; set; } = null;
+        public bool IsSpecialDate { get; set; } = false;
+        public bool IsTodayDate { get; set; } = false;
     }
 }

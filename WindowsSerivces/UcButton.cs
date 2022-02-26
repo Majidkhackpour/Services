@@ -8,7 +8,7 @@ namespace WindowsSerivces
 {
     public partial class UcButton : UserControl
     {
-        public event Func<UcButton, Task> OnClick;
+        public new event Func<UcButton, Task> OnClick;
         private bool _isSelect = false;
         public string Title { get => lblTitle.Text; set => lblTitle.Text = value; }
         public bool IsSelect
@@ -33,7 +33,7 @@ namespace WindowsSerivces
                 }
             }
         }
-        public EnContractType_ Type { get; set; }
+        public EnContractType_ Type { get; set; } = EnContractType_.None;
         public UcButton() => InitializeComponent();
         private void RaiseOnClickEvent(UcButton btn)
         {

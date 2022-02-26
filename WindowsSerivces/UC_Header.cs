@@ -4,7 +4,7 @@ namespace WindowsSerivces
 {
     public partial class UC_Header : UserControl
     {
-        public string Text { get => lblMessage.Text; set => lblMessage.Text = value; }
+        public new string Text { get => lblMessage.Text; set => lblMessage.Text = value; }
         private bool _isModified = false;
         public bool IsModified
         {

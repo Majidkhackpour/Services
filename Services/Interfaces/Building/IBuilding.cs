@@ -24,9 +24,6 @@ namespace Servicess.Interfaces.Building
         decimal PishTotalPrice { get; set; }
         decimal PishPrice { get; set; }
         DateTime? DeliveryDate { get; set; }
-        string PishDesc { get; set; }
-        string MoavezeDesc { get; set; }
-        string MosharekatDesc { get; set; }
         int Masahat { get; set; }
         int ZirBana { get; set; }
         Guid CityGuid { get; set; }
@@ -49,7 +46,6 @@ namespace Servicess.Interfaces.Building
         int TabaqeNo { get; set; }
         int VahedPerTabaqe { get; set; }
         int VahedNo { get; set; }
-        float MetrazhKouche { get; set; }
         float ErtefaSaqf { get; set; }
         float Hashie { get; set; }
         float Lenght { get; set; }
@@ -57,10 +53,6 @@ namespace Servicess.Interfaces.Building
         bool? BuildingPermits { get; set; }
         float WidthOfPassage { get; set; }
         string SaleSakht { get; set; }
-        string DateParvane { get; set; }
-        string ParvaneSerial { get; set; }
-        bool BonBast { get; set; }
-        bool MamarJoda { get; set; }
         int RoomCount { get; set; }
         EnBuildingPriority Priority { get; set; }
         bool IsArchive { get; set; }

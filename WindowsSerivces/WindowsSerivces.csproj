@@ -97,6 +97,20 @@
   <ItemGroup>
     <Compile Include="clsLoadNewForm.cs" />
     <Compile Include="ContextMenuSetter.cs" />
+    <Compile Include="Error\clsShowError.cs" />
+    <Compile Include="Error\ErrorManager.cs" />
+    <Compile Include="Error\frmShowErrorDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Error\frmShowErrorDetails.designer.cs">
+      <DependentUpon>frmShowErrorDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Error\FrmShowErrorMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Error\FrmShowErrorMessage.designer.cs">
+      <DependentUpon>FrmShowErrorMessage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Extentions.cs" />
     <Compile Include="frmManagementPass.cs">
       <SubType>Form</SubType>
@@ -116,6 +130,24 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Sync\FrmConnectionSyncStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sync\FrmConnectionSyncStatus.Designer.cs">
+      <DependentUpon>FrmConnectionSyncStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sync\UcCacheStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sync\UcCacheStatus.Designer.cs">
+      <DependentUpon>UcCacheStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sync\UcSyncStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sync\UcSyncStatus.Designer.cs">
+      <DependentUpon>UcSyncStatus.cs</DependentUpon>
     </Compile>
     <Compile Include="txtSetter.cs" />
     <Compile Include="CurrencyTextBox.cs">
@@ -158,6 +190,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\RealState\RealState\EntityCache\EntityCache.csproj">
+      <Project>{cc417799-f38c-4997-8491-510eb1c15f74}</Project>
+      <Name>EntityCache</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\RealState\RealState\Notification\Notification.csproj">
       <Project>{44a0f109-df64-482c-befb-df20038ee4df}</Project>
       <Name>Notification</Name>
@@ -171,6 +207,12 @@
     <EmbeddedResource Include="CurrencyTextBox.resx">
       <DependentUpon>CurrencyTextBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Error\frmShowErrorDetails.resx">
+      <DependentUpon>frmShowErrorDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Error\FrmShowErrorMessage.resx">
+      <DependentUpon>FrmShowErrorMessage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmManagementPass.resx">
       <DependentUpon>frmManagementPass.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +222,15 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sync\FrmConnectionSyncStatus.resx">
+      <DependentUpon>FrmConnectionSyncStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sync\UcCacheStatus.resx">
+      <DependentUpon>UcCacheStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sync\UcSyncStatus.resx">
+      <DependentUpon>UcSyncStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UcActionButton.resx">
       <DependentUpon>UcActionButton.cs</DependentUpon>
@@ -208,6 +259,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\4.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accept11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-warning-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Info-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wait_Small_JPG.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\connection-loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\connection-failed-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\connection-succsess-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-info-50.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

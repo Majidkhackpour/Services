@@ -143,9 +143,8 @@ namespace Services
                 {
                     if (!string.IsNullOrEmpty(_DecimalPoint)) return _DecimalPoint;
 
-                    decimal x = 0;
-                    if (!decimal.TryParse("0.1", out x))
-                        _DecimalPoint = ((double)0.1).ToString().Substring(1, 1);
+                    if (!decimal.TryParse("0.1", out var x))
+                        _DecimalPoint = 0.1.ToString().Substring(1, 1);
                     else
                         _DecimalPoint = x.ToString() == "0.1" ? "." : ((double)0.1).ToString().Substring(1, 1);
 

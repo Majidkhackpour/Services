@@ -3,7 +3,7 @@ using Servicess.Interfaces;
 
 namespace Services.Interfaces.Building
 {
-    public interface IBuildingReview : IHasGuid, IHasModified
+    public interface IBuildingReview : IHasGuid, IHasModified, IHasStatus
     {
         Guid BuildingGuid { get; set; }
         Guid UserGuid { get; set; }

@@ -105,20 +105,50 @@ namespace Services
 
             return short.TryParse(value, out var ret) ? ret : def;
         }
-        public static SortableBindingList<T> ToSortableBindingList<T>(this IEnumerable<T> items)
+        public static BindingList<T> ToBindingList<T>(this IEnumerable<T> items, CancellationToken token = default)
         {
+            var line = 0;
+            var ret = new BindingList<T>();
+            try
+            {
+                line = 1;
+                var list = items?.ToList();
+                line = 2;
+                if (list != null && list.Any())
+                {
+                    line = 3;
+                    foreach (var item in list.Where(item => item != null))
+                    {
+                        if (token.IsCancellationRequested) return null;
+                        line = 4;
+                        ret.Add(item);
+                    }
+                }
+            }
+            catch (Exception ex) { WebErrorLog.ErrorInstence.StartErrorLog(ex, $"edited in 1399/12/06 - line={line}"); }
+            return ret;
+        }
+        public static SortableBindingList<T> ToSortableBindingList<T>(this IEnumerable<T> items, CancellationToken token = default)
+        {
+            var line = 0;
             var ret = new SortableBindingList<T>();
             try
             {
-                if (items != null && items.Any())
-                    foreach (var item in items)
+                line = 1;
+                var list = items?.ToList();
+                line = 2;
+                if (list != null && list.Any())
+                {
+                    line = 3;
+                    foreach (var item in list.Where(item => item != null))
+                    {
+                        if (token.IsCancellationRequested) return null;
+                        line = 4;
                         ret.Add(item);
+                    }
+                }
             }
-            catch (Exception ex)
-            {
-                WebErrorLog.ErrorInstence.StartErrorLog(ex);
-            }
-
+            catch (Exception ex) { WebErrorLog.ErrorInstence.StartErrorLog(ex, $"edited in 1399/12/06 - line={line}"); }
             return ret;
         }
         public static string ThreeSeparator(this decimal value) => value.ToString("#,0");

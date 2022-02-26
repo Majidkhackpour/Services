@@ -8,7 +8,7 @@ namespace WindowsSerivces
     public partial class UcActionButton : UserControl
     {
         private ButtonType _type = ButtonType.None;
-        public event Func<object, EventArgs, Task> OnClick;
+        public new event Func<object, EventArgs, Task> OnClick;
         public string Title { get => btnFinish.Text; set => btnFinish.Text = value; }
         public ButtonType Type
         {
@@ -23,6 +23,8 @@ namespace WindowsSerivces
                         break;
                     case ButtonType.CancelButton:
                         btnFinish.Image = Properties.Resources.tab_close_;
+                        break;
+                    default: btnFinish.Image = null;
                         break;
                 }
             }

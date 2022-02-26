@@ -9,7 +9,7 @@ namespace Services.FilterObjects
         public decimal Price2 { get; set; } = 0;
         public int Masahat { get; set; } = 0;
         public int RoomCount { get; set; } = 0;
-        public Guid BuildingAccountTypeGuid { get; set; } = Guid.Empty;
-        public Guid RegionGuid { get; set; } = Guid.Empty;
+        public Guid? BuildingAccountTypeGuid { get; set; } = null;
+        public Guid? RegionGuid { get; set; } = null;
     }
 }

@@ -21,7 +21,7 @@ namespace WindowsSerivces
                 //pnlContent.AutoScroll = true;
                 frm.Show();
             }
-            catch (Exception ex)
+            catch
             {
                 //WebErrorLog.ErrorInstence.StartErrorLog(ex);
             }

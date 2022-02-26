@@ -10,7 +10,6 @@ namespace Services.Settings.GlobalSettings
         public bool IsSendToSayer { get; set; }
         public string SayerText { get; set; }
         public bool IsSendAfterMatch { get; set; }
-        public string SendMatchTextRahn { get; set; }
-        public string SendMatchTextKharid { get; set; }
+        public string SendMatchText { get; set; }
     }
 }

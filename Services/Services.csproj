@@ -125,6 +125,7 @@
     <Compile Include="DefaultCoding\ParentDefaults.cs" />
     <Compile Include="DefaultCoding\TafsilCodingDefaults.cs" />
     <Compile Include="FilterObjects\BuildingFilter.cs" />
+    <Compile Include="FilterObjects\BuildingReviewFilter.cs" />
     <Compile Include="FilterObjects\ContractFilter.cs" />
     <Compile Include="FilterObjects\RequestMatchFilter.cs" />
     <Compile Include="Interfaces\Building\IAdvertiseLog.cs" />
@@ -217,6 +218,7 @@
     <Compile Include="Interfaces\ILogger.cs" />
     <Compile Include="Interfaces\ITelegramBuilding.cs" />
     <Compile Include="Interfaces\IWhatsappBuilding.cs" />
+    <Compile Include="Interfaces\Sync\ISendData2Server.cs" />
     <Compile Include="InternalLogger.cs" />
     <Compile Include="Json.cs" />
     <Compile Include="LkSerial\GenerateActivationCodeServer.cs" />
